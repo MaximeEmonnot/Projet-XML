@@ -6,8 +6,7 @@ public class Engine {
     private Engine() {}
 
     public static Engine GetInstance(){
-        if (instance == null)
-            instance = new Engine();
+        if (instance == null) instance = new Engine();
         return instance;
     }
 
@@ -23,11 +22,11 @@ public class Engine {
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
-        GraphicsSystem.GetInstance().DrawLine(new Point(0, 0), Mouse.GetInstance().GetMousePos(), Color.BLUE);
+        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
     }
 
     private void BeginLoop(){
-        //Timer.GetInstance().Update();
+        Timer.GetInstance().Update();
     }
 
     private void EndLoop() {

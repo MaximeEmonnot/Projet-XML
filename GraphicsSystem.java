@@ -117,6 +117,31 @@ public class GraphicsSystem extends JPanel {
         }
     }
 
+    public void DrawSprite(ImageIcon sprite, Point p){
+        DrawSprite(sprite, p, 0);
+    }
+    public void DrawSprite(ImageIcon sprite, Point p, int priority){
+        DrawSprite(sprite, new Rectangle(p.x, p.y, sprite.getIconWidth(), sprite.getIconHeight()), priority);
+    }
+    public void DrawSprite(ImageIcon sprite, Rectangle dest) {
+        DrawSprite(sprite, dest, 0);
+    }
+    public void DrawSprite(ImageIcon sprite, Rectangle dest, int priority){
+        DrawSprite(sprite, dest, new Rectangle(0, 0, sprite.getIconWidth(), sprite.getIconHeight()), priority);
+    }
+    public void DrawSprite(ImageIcon sprite, Rectangle dest, Rectangle src) {
+        DrawSprite(sprite, dest, src, 0);
+    }
+    public void DrawSprite(ImageIcon sprite, Rectangle dest, Rectangle src, int priority){
+        synchronized (renderMap) {
+            renderMap.add(Map.entry(priority, (Graphics g) -> { 
+                g.drawImage(sprite.getImage(), dest.x, dest.y, dest.x + dest.width, dest.y + dest.height, 
+                                   src.x, src.y, src.x + src.width, src.y + src.height, null);
+            }
+            ));
+        }
+    }
+
     private static GraphicsSystem instance = null;
 
     private Color backgroundColor = Color.BLACK;
