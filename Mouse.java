@@ -163,6 +163,11 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
         TrimBuffer();
     }
 
+    @Override
+    public String toString() {
+        return "Mouse postion : (" + position.x + ", " + position.y + ") Buttons State : L = " + bLeftIsPressed + " M = " + bMiddleIsPressed + " R = " + bRightIsPressed;
+    }
+
     private void TrimBuffer() {
         if (buffer.size() > bufferSize) buffer.remove();
     }

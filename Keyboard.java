@@ -71,6 +71,12 @@ public class Keyboard implements KeyListener {
         TrimBuffer(charBuffer);
     }
 
+    @Override
+    public String toString(){
+        return "Key pressed : " + keyBuffer.size() + " Char pressed : " + charBuffer.size();
+    }
+
+
     private <T> void TrimBuffer(Queue<T> buffer){
         if (buffer.size() > sizeBuffer) buffer.remove();
     } 
