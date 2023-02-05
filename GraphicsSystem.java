@@ -1,0 +1,124 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.swing.*;
+
+public class GraphicsSystem extends JPanel {
+    private interface GraphicsLambda {
+        void func(Graphics g);
+    }
+
+    private GraphicsSystem() {}
+
+    public synchronized static GraphicsSystem GetInstance() {
+        if (instance == null)
+            instance = new GraphicsSystem();
+        return instance;
+    }
+
+    @Override
+    public void paintComponent(Graphics g){
+        synchronized(renderMap){
+            super.paintComponent(g);
+
+            setBackground(backgroundColor);
+            renderMap.forEach(e -> e.getValue().func(g));
+            renderMap.clear();
+        }
+    }
+
+    public void Render() {
+        synchronized(renderMap){
+            renderMap.sort((e0, e1) -> e0.getKey() - e1.getKey());
+            repaint();
+        }
+    }
+
+    public void SetBackgroundColor(Color c){
+        synchronized (renderMap){
+            renderMap.add(Map.entry(0, (Graphics g) -> {
+                g.setColor(c);
+                g.fillRect(0, 0, 800, 600);
+            }));
+        }
+    }
+
+    public void DrawPixel(Point p, Color c){
+        DrawPixel(p, c, 0);
+    }
+    public void DrawPixel(Point p, Color c, int priority){
+        synchronized (renderMap){
+            renderMap.add(Map.entry(priority, (Graphics g) -> {
+                g.setColor(c);
+                g.drawLine(p.x, p.y, p.x, p.y);
+            }));
+        }
+    }
+
+    public void DrawLine(Point p0, Point p1, Color c){
+        DrawLine(p0, p1, c, 0);
+    }
+    public void DrawLine(Point p0, Point p1, Color c, int priority)
+    {
+        synchronized (renderMap){
+            renderMap.add(Map.entry(priority, (Graphics g) -> {
+                g.setColor(c);
+                g.drawLine(p0.x, p0.y, p1.x, p1.y);
+            }));
+        }
+    }
+
+    public void DrawRect(Rectangle r, Color c, boolean bIsFilled)
+    {
+        DrawRect(r, c, bIsFilled, 0);
+    }
+    public void DrawRect(Rectangle r, Color c, boolean bIsFilled, int priority)
+    {
+        synchronized (renderMap){
+            renderMap.add(Map.entry(priority, (Graphics g) -> {
+                g.setColor(c);
+                if (bIsFilled) g.fillRect(r.x, r.y, r.width, r.height);
+                else g.drawRect(r.x, r.y, r.width, r.height);
+            }));
+            }
+    }
+
+    public void DrawRoundRect(Rectangle r, Point roundness, Color c, boolean bIsFilled){
+        DrawRoundRect(r, roundness, c, bIsFilled, 0);
+    }
+    public void DrawRoundRect(Rectangle r, Point roundness, Color c, boolean bIsFilled, int priority)
+    {
+        synchronized (renderMap){
+            renderMap.add(Map.entry(priority, (Graphics g) -> {
+                g.setColor(c);
+                if (bIsFilled) g.fillRoundRect(r.x, r.y, r.width, r.height, roundness.x, roundness.y);
+                else g.drawRoundRect(r.x, r.y, r.width, r.height, roundness.x, roundness.y);
+            }));
+            }
+    }
+
+    public void DrawText(String text, Point p, Color c)
+    {
+        DrawText(text, p, new Font("Arial Bold", Font.PLAIN, 16), c, 0);
+    }
+    public void DrawText(String text, Point p, Font f, Color c)
+    {
+        DrawText(text, p, f, c, 0);
+    }
+    public void DrawText(String text, Point p, Font f, Color c, int priority)
+    {
+        synchronized (renderMap){
+            renderMap.add(Map.entry(priority,(Graphics g) -> {
+                g.setFont(f);
+                g.setColor(c);
+                g.drawString(text, p.x, p.y);
+            }));
+        }
+    }
+
+    private static GraphicsSystem instance = null;
+
+    private Color backgroundColor = Color.BLACK;
+    private ArrayList<Map.Entry<Integer, GraphicsLambda>> renderMap = new ArrayList<Map.Entry<Integer, GraphicsLambda>>();
+}

@@ -25,7 +25,7 @@ public class Keyboard implements KeyListener {
 
     private Keyboard(){}
 
-    public static Keyboard GetInstance(){
+    public synchronized static Keyboard GetInstance(){
         if (instance == null)
             instance = new Keyboard();
         return instance;
@@ -47,8 +47,8 @@ public class Keyboard implements KeyListener {
     }
 
     public void Pop(){
-        keyBuffer.remove();
-        charBuffer.remove();
+        if (!keyBuffer.isEmpty()) keyBuffer.remove();
+        if (!charBuffer.isEmpty()) charBuffer.remove();
     }
 
     @Override

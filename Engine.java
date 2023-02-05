@@ -1,8 +1,9 @@
+import java.awt.Color;
+import java.awt.Point;
+
 public class Engine {
     
-    private Engine() {
-        Window.GetInstance();
-    }
+    private Engine() {}
 
     public static Engine GetInstance(){
         if (instance == null)
@@ -12,10 +13,17 @@ public class Engine {
 
     public synchronized void EngineLoop() {
         BeginLoop();
-
-
-
+        Update();
+        Draw();
         EndLoop();
+    }
+
+    private void Update(){
+
+    }
+    private void Draw(){
+        GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
+        GraphicsSystem.GetInstance().DrawLine(new Point(0, 0), Mouse.GetInstance().GetMousePos(), Color.BLUE);
     }
 
     private void BeginLoop(){
@@ -25,6 +33,8 @@ public class Engine {
     private void EndLoop() {
         Mouse.GetInstance().Pop();
         Keyboard.GetInstance().Pop();
+
+        GraphicsSystem.GetInstance().Render();
     }
 
     private static Engine instance = null;

@@ -23,7 +23,7 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
 
     private Mouse() {}
 
-    public static Mouse GetInstance() {
+    public synchronized static Mouse GetInstance() {
         if (instance == null)
             instance = new Mouse();
         return instance;
