@@ -11,7 +11,7 @@ public class Main
             } 
         }
         catch(Exception e){
-            e.printStackTrace();
+            EngineException.ShowMessageBox(e, "Java Swing Engine Exception");
         }
     }
 
