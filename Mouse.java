@@ -65,6 +65,7 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
     @Override
     public void mouseDragged(MouseEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         buffer.add(EEventType.Move);
         TrimBuffer();
     }
@@ -72,6 +73,7 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
     @Override
     public void mouseMoved(MouseEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         buffer.add(EEventType.Move);
         TrimBuffer();
     }
@@ -79,6 +81,7 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         buffer.add((e.getWheelRotation() < 0) ? EEventType.WheelUp : EEventType.WheelDown); 
         TrimBuffer();
     }
@@ -86,63 +89,67 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
     @Override
     public void mouseClicked(MouseEvent e) {
         position = e.getPoint();
-
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         switch(e.getButton()){
-        case MouseEvent.BUTTON1:
+            case MouseEvent.BUTTON1:
             buffer.add(EEventType.LClick);
             break;
-        case MouseEvent.BUTTON2:
+            case MouseEvent.BUTTON2:
             buffer.add(EEventType.MClick);
             break;
-        case MouseEvent.BUTTON3:
+            case MouseEvent.BUTTON3:
             buffer.add(EEventType.RClick);
             break;
-        default:
+            default:
             break;
         }
         TrimBuffer();
     }
-
+    
     @Override
     public void mouseEntered(MouseEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         buffer.add(EEventType.Move);
         TrimBuffer();
     }
-
+    
     @Override
     public void mouseExited(MouseEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
         buffer.add(EEventType.Move);
         TrimBuffer();
     }
-
+    
     @Override
     public void mousePressed(MouseEvent e) {
         position = e.getPoint();
-
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
+        
         switch(e.getButton()){
-        case MouseEvent.BUTTON1:
+            case MouseEvent.BUTTON1:
             buffer.add(EEventType.LPress);
             bLeftIsPressed = true;
             break;
-        case MouseEvent.BUTTON2:
+            case MouseEvent.BUTTON2:
             buffer.add(EEventType.MPress);
             bMiddleIsPressed = true;
             break;
-        case MouseEvent.BUTTON3:
+            case MouseEvent.BUTTON3:
             buffer.add(EEventType.RPress);
             bRightIsPressed = true;
             break;
-        default:
+            default:
             break;
         }
         TrimBuffer();
     }
-
+    
     @Override
     public void mouseReleased(MouseEvent e) {
         position = e.getPoint();
+        position.translate(WINDOW_OFFSET.x, WINDOW_OFFSET.y);
 
         switch(e.getButton()){
         case MouseEvent.BUTTON1:
@@ -173,6 +180,8 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
     }
 
     private static Mouse instance = null;
+
+    private final static Point WINDOW_OFFSET = new Point(-8, -31);
 
     private boolean bLeftIsPressed = false;
     private boolean bMiddleIsPressed = false;
