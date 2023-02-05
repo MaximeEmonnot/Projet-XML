@@ -100,7 +100,10 @@ public class GraphicsSystem extends JPanel {
 
     public void DrawText(String text, Point p, Color c)
     {
-        DrawText(text, p, new Font("Arial Bold", Font.PLAIN, 16), c, 0);
+        DrawText(text, p, c, 0);
+    }
+    public void DrawText(String text, Point p, Color c, int priority){
+        DrawText(text, p, new Font("Arial Bold", Font.PLAIN, 16), c, priority);
     }
     public void DrawText(String text, Point p, Font f, Color c)
     {
