@@ -2,12 +2,7 @@ import java.awt.*;
 
 public class Engine {
     
-    private Engine() {
-
-        testButton = new UIButton(new Rectangle(15, 15, 180, 180), "Gros caca", 
-            ()->{System.out.println("Lol");}
-        , Color.WHITE, Color.GRAY, Color.DARK_GRAY);
-    }
+    private Engine() {}
 
     public static Engine GetInstance(){
         if (instance == null) instance = new Engine();
@@ -22,12 +17,10 @@ public class Engine {
     }
 
     private void Update() throws Exception {
-        testButton.Update();
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
         GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
-        testButton.Draw(2);
     }
 
     private void BeginLoop(){
@@ -42,6 +35,4 @@ public class Engine {
     }
 
     private static Engine instance = null;
-
-    private UIButton testButton;
 }
