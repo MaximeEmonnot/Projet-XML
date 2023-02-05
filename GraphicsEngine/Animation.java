@@ -1,6 +1,8 @@
+package GraphicsEngine;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+
 
 public class Animation {
     public enum EAnimationMode 
@@ -17,7 +19,7 @@ public class Animation {
     }
 
     public void Update() {
-        curFrameTime += Timer.GetInstance().DeltaTime();
+        curFrameTime += CoreEngine.Timer.GetInstance().DeltaTime();
         while(curFrameTime > holdTime) Advance();
     }
 

@@ -1,3 +1,4 @@
+package CoreEngine;
 public class Timer {
     private Timer() {
         oldTime = System.currentTimeMillis();

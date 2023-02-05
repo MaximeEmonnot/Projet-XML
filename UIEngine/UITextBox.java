@@ -1,4 +1,7 @@
+package UIEngine;
 import java.awt.*;
+
+import GraphicsEngine.GraphicsSystem;
 
 public class UITextBox {
     

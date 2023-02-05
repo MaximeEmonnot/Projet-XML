@@ -1,4 +1,7 @@
+package CoreEngine;
 import javax.swing.JFrame;
+
+import GraphicsEngine.GraphicsSystem;
 
 public class Window extends JFrame {
     private Window() {

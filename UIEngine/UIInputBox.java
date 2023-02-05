@@ -1,4 +1,9 @@
+package UIEngine;
 import java.awt.*;
+
+import CoreEngine.Keyboard;
+import CoreEngine.Mouse;
+import GraphicsEngine.GraphicsSystem;
 
 public class UIInputBox {
     

@@ -1,4 +1,8 @@
+package UIEngine;
 import java.awt.*;
+
+import CoreEngine.Mouse;
+import GraphicsEngine.GraphicsSystem;
 
 public class UIButton {
     public interface Lambda{

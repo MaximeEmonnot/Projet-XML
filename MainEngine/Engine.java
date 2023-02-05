@@ -1,4 +1,11 @@
+package MainEngine;
 import java.awt.*;
+
+import CoreEngine.Keyboard;
+import CoreEngine.Mouse;
+import CoreEngine.Timer;
+import GraphicsEngine.GraphicsSystem;
+import GraphicsEngine.SpriteFactory;
 
 public class Engine {
     
@@ -20,7 +27,7 @@ public class Engine {
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
-        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
+        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
     }
 
     private void BeginLoop(){
