@@ -9,15 +9,24 @@ public class Engine {
         return instance;
     }
 
-    public synchronized void EngineLoop() {
+    public synchronized void EngineLoop() throws Exception {
         BeginLoop();
         Update();
         Draw();
         EndLoop();
     }
 
-    private void Update(){
-
+    private void Update() throws Exception {
+        switch (Mouse.GetInstance().Read()){
+        case LRelease:
+            AudioManager.GetInstance().PlaySound("Sounds/free_bird.wav");
+            break;
+        case RRelease:
+            AudioManager.GetInstance().StopSound();
+            break;
+        default:
+            break;
+        }
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
