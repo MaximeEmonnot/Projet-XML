@@ -19,6 +19,7 @@ public class UIInputBox {
         if (bIsFocused){
             char c = Keyboard.GetInstance().ReadChar();
             if (authorizedChar.contains(Character.toString(c))) text += c;
+            else if (c == 8 && !text.isEmpty()) text = text.substring(0, text.length() - 1);
         }
     }
 
@@ -28,7 +29,7 @@ public class UIInputBox {
     public void Draw(int priority){
         GraphicsSystem.GetInstance().DrawRect(rect, Color.WHITE, true, priority);
         GraphicsSystem.GetInstance().DrawRect(rect, Color.BLACK, false, priority + 1);
-        String textToDraw = new String();
+        String textToDraw = "";
         Color textColor = Color.BLACK;
         Font textFont = null;
         if (!bIsFocused){
@@ -48,7 +49,7 @@ public class UIInputBox {
 
     private Rectangle rect;
     private String description;
-    private String text;
+    private String text = "";
     private boolean bIsFocused = false;
     private final static String authorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"°+-*@&éèêàùç²{([|])}=_><%$€#~ ";
 }

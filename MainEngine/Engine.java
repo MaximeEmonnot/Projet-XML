@@ -6,10 +6,13 @@ import CoreEngine.Mouse;
 import CoreEngine.Timer;
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
+import UIEngine.UIInputBox;
 
 public class Engine {
     
-    private Engine() {}
+    private Engine() {
+        test = new UIInputBox(new Rectangle(15, 15, 64, 64), "Test");
+    }
 
     public static Engine GetInstance(){
         if (instance == null) instance = new Engine();
@@ -24,10 +27,13 @@ public class Engine {
     }
 
     private void Update() throws Exception {
+        test.Update();
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
         GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
+   
+        test.Draw(3);
     }
 
     private void BeginLoop(){
@@ -42,4 +48,6 @@ public class Engine {
     }
 
     private static Engine instance = null;
+
+    UIInputBox test;
 }
