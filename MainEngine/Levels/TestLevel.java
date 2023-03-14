@@ -30,7 +30,7 @@ public class TestLevel extends ALevel {
     @Override
     public void Draw() {
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
-        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/cat-standing.gif"), Mouse.GetInstance().GetMousePos(), 1);
+        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/gigachad-chad.gif"), Mouse.GetInstance().GetMousePos(), 1);
    
         test.Draw(3);
     }
