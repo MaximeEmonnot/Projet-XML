@@ -31,7 +31,7 @@ public class Engine {
     }
     private void Draw(){
         GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
-        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/test.png"), Mouse.GetInstance().GetMousePos(), 1);
+        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/Images/cat-standing.gif"), Mouse.GetInstance().GetMousePos(), 1);
    
         test.Draw(3);
     }
