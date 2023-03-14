@@ -40,7 +40,7 @@ public class GraphicsSystem extends JPanel {
         synchronized (renderMap){
             renderMap.add(Map.entry(0, (Graphics g) -> {
                 g.setColor(c);
-                g.fillRect(0, 0, 800, 600);
+                g.fillRect(0, 0, CoreEngine.Window.GetInstance().GetWidth(), CoreEngine.Window.GetInstance().GetHeight());
             }));
         }
     }

@@ -22,6 +22,14 @@ public class Window extends JFrame {
         return instance;
     }
 
+    public int GetWidth() {
+        return width;
+    }
+
+    public int GetHeight(){
+        return height;
+    }
+
     private static Window instance = null;
 
     private final int width = 800;
