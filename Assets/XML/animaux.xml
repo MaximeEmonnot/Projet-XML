@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <animal nom="Vache">
+        <gif src="/Assets.GIF/vache.gif"/>
+        <classification>
+            <embranchement>
+                Chordés
+            </embranchement>
+            <classe>
+                Mammifères
+            </classe>
+            <ordre>
+                Artodactyla
+            </ordre>
+            <famille>
+                Bovidés
+            </famille>
+            <genre>
+                Bos
+            </genre>
+            <nom_scientifique>
+                Bos taurus
+            </nom_scientifique>
+        </classification>
+        <localisations>
+        	<localisation>
+        		Afrique
+        	</localisation>
+        	<localisation>
+        		Asie
+        	</localisation>
+        	<localisation>
+        		Amérique Centrale
+        	</localisation>
+        	<localisation>
+        		Eurasie
+        	</localisation>
+        	<localisation>
+        		Europe
+        	</localisation>
+        	<localisation>
+        		Amérique du Nord
+        	</localisation>
+        	<localisation>
+        		Océanie
+        	</localisation>
+        	<localisation>
+        		Amérique du Sud
+        	</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur>
+                1.5m - 1.8m
+            </longueur>
+            <poids>
+                400kg - 800kg
+            </poids>
+            <longevite>
+                12 - 20 années
+            </longevite>
+            <type_peau>
+                cuir
+            </type_peau>
+            <regime>
+                Herbivore
+            </regime>
+            <vitesse_max>
+                25 km/h
+            </vitesse_max>
+        </caracteristique>
+    </animal>
+</root>
