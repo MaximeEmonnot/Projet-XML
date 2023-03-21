@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="animals">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="animal">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="gif">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute type="xs:string" name="src"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="classification">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="embranchement"/>
+                                        <xs:element type="xs:string" name="classe"/>
+                                        <xs:element type="xs:string" name="ordre"/>
+                                        <xs:element type="xs:string" name="famille"/>
+                                        <xs:element type="xs:string" name="genre"/>
+                                        <xs:element type="xs:string" name="nom_scientifique"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="localisations">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="continentType" name="localisation" maxOccurs="6" minOccurs="1"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="caracteristique">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="longueur"/>
+                                        <xs:element type="xs:string" name="poids"/>
+                                        <xs:element type="xs:string" name="longevite"/>
+                                        <xs:element type="xs:string" name="type_peau"/>
+                                        <xs:element type="xs:string" name="regime"/>
+                                        <xs:element type="xs:string" name="vitesse_max"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="nom"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="continentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Afrique"/>
+            <xs:enumeration value="Amérique"/>
+            <xs:enumeration value="Antarctique"/>
+            <xs:enumeration value="Asie"/>
+            <xs:enumeration value="Europe"/>
+            <xs:enumeration value="Océanie"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
