@@ -36,15 +36,15 @@ public class UIInputBox {
         if (!bIsFocused && text.length() == 0){
             textToDraw = description;
             textColor = Color.GRAY;
-            textFont = new Font("Arial Bold", Font.ITALIC, 16);
+            textFont = new Font("Arial Bold", Font.ITALIC, FONTSIZE);
         }
         else{
             textToDraw = text;
-            textFont = new Font("Arial Bold", Font.PLAIN, 16);
+            textFont = new Font("Arial Bold", Font.PLAIN, FONTSIZE);
         } 
         GraphicsSystem.GetInstance().DrawText(textToDraw, new Point(
             rect.x + (int)(0.1f * rect.width),
-            rect.y + (int)(0.6f * rect.height)
+            rect.y + (int)(0.5f * rect.height + 0.5f * FONTSIZE * 0.75f)
         ), textFont, textColor, priority + 2);
     }
 
@@ -60,6 +60,10 @@ public class UIInputBox {
         return text;
     }
 
+    public void SetText(String _text){
+        text = _text;
+    }
+    
     private Rectangle rect;
     private String description;
     private String text = "";
@@ -67,5 +71,6 @@ public class UIInputBox {
     private String authorizedChar = "";
     private int maximalSize = Integer.MAX_VALUE;
     private final static String defaultAuthorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"°+-*@&יטךאשח²{([|])}=_><%$€#~ ";
+    private final static int FONTSIZE = 16;
     
 }

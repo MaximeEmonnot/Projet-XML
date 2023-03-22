@@ -55,8 +55,8 @@ public class UIButton {
         GraphicsSystem.GetInstance().DrawRect(rect, Color.BLACK, false, priority + 1);
         GraphicsSystem.GetInstance().DrawText(text, new Point(
             rect.x + (int)((rect.width - text.length() * 8) / 2),
-            rect.y + (int)(0.6f * rect.height)
-        ), Color.BLACK, priority + 2);
+            rect.y + (int)(0.5f * rect.height + 0.5f * FONTSIZE * 0.75f)
+        ), new Font("Arial Bold", Font.PLAIN, FONTSIZE), Color.BLACK, priority + 2);
     }
 
     private Rectangle rect;
@@ -66,4 +66,5 @@ public class UIButton {
     private Color hoverColor;
     private Color pressColor;
     private EButtonState state = EButtonState.BaseState;
+    private final static int FONTSIZE = 16;
 }

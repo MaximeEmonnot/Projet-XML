@@ -19,12 +19,12 @@
         	<localisation>Océanie</localisation>
         </localisations>
         <caracteristique>
-            <longueur>1.5m - 1.8m</longueur>
-            <poids>400kg - 800kg</poids>
-            <longevite>12 - 20 années</longevite>
+            <longueur_max unite="m">1.8</longueur_max>
+            <poids_max unite="kg">800</poids_max>
+            <longevite_max unite="années">20</longevite_max>
             <type_peau>cuir</type_peau>
             <regime>Herbivore</regime>
-            <vitesse_max>25 km/h</vitesse_max>
+            <vitesse_max unite="km/h">25.5</vitesse_max>
         </caracteristique>
     </animal>
 </animals>

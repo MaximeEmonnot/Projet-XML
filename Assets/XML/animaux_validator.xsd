@@ -37,22 +37,85 @@
                             <xs:element name="caracteristique">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="xs:string" name="longueur"/>
-                                        <xs:element type="xs:string" name="poids"/>
-                                        <xs:element type="xs:string" name="longevite"/>
+                                        <xs:element name="longueur_max">
+                                        	<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="positiveDecimals">
+														<xs:attribute type="distanceUnit" name="unite" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="poids_max">
+                                        	<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="positiveDecimals">
+														<xs:attribute type="weightUnit" name="unite" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="longevite_max">
+                                        	<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:positiveInteger">
+														<xs:attribute type="timeUnit" name="unite" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+                                        </xs:element>
                                         <xs:element type="xs:string" name="type_peau"/>
                                         <xs:element type="xs:string" name="regime"/>
-                                        <xs:element type="xs:string" name="vitesse_max"/>
+                                        <xs:element name="vitesse_max">
+	                                        <xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="positiveDecimals">
+														<xs:attribute type="speedUnit" name="unite" use="required"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
-                        <xs:attribute type="xs:string" name="nom"/>
+                        <xs:attribute type="xs:string" name="nom" use="required"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+    
+    <xs:simpleType name="distanceUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="m"/>
+            <xs:enumeration value="mm"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="weightUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="t"/>
+            <xs:enumeration value="kg"/>
+            <xs:enumeration value="g"/>
+            <xs:enumeration value="mg"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="speedUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="km/h"/>
+            <xs:enumeration value="m/s"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="timeUnit">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="jours"/>
+            <xs:enumeration value="années"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <xs:simpleType name="continentType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Afrique"/>
@@ -63,4 +126,11 @@
             <xs:enumeration value="Océanie"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:simpleType name="positiveDecimals">
+    <xs:restriction base="xs:decimal">
+        <xs:minExclusive value="0"/>
+    </xs:restriction>
+	</xs:simpleType>
+	
 </xs:schema>
