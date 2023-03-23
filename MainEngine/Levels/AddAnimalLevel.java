@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -13,13 +12,10 @@ import java.util.List;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import CoreEngine.Mouse;
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
 import ParserEngine.XMLManager;
-import ParserEngine.XMLQuerier;
 import UIEngine.UIButton;
-import UIEngine.UIButton.Lambda;
 import UIEngine.UIInputBox;
 import UIEngine.UISelectionMenu;
 import UIEngine.UITextBox;
@@ -29,12 +25,19 @@ public class AddAnimalLevel extends ALevel {
 	public AddAnimalLevel(String _name) {
 		super(_name);
 		
-		gifSectionPoint = new Point(500 , 100);
+		gifSectionPoint = new Point(550 , 50);
 		classificationSectionPoint = new Point(50, 300);
-		caracteristiqueSectionPoint = new Point(500, 300);
-		localistaionSectionPoint = new Point(50, 50);
+		caracteristiqueSectionPoint = new Point(550, 300);
+		localistaionSectionPoint = new Point(50, 150);
 		addSectionPoint = new Point(1100, 600);
+		nomSectionPoint = new Point(50, 50);
+		errorSectionPoint = new Point(650, 650);
 		
+		
+		// Section Nom
+		nomInputBox = new UIInputBox(new Rectangle(nomSectionPoint.x + 170, nomSectionPoint.y - 20, 160, 30), "");
+		
+		nomInputBox.SetNewMaximalSize(15);
 		
 		// Section Gif
 		selectedGifTextBox = new UITextBox(new Rectangle(gifSectionPoint.x + 170, gifSectionPoint.y - 20, 180, 30), selectedGif);
@@ -146,6 +149,9 @@ public class AddAnimalLevel extends ALevel {
 			else
 				decimalInput.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
 		
+		// Section Nom
+		nomInputBox.Update();
+		
 		// Section Gif
 		selectedGifTextBox.SetText(selectedGif);
 		gifSelectionMenu.Update();
@@ -195,11 +201,15 @@ public class AddAnimalLevel extends ALevel {
 	public void Draw() throws Exception {
 		GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
 		
+		// Section Nom
+		GraphicsSystem.GetInstance().DrawText("Nom:", nomSectionPoint, Color.BLACK);
+		nomInputBox.Draw();
+		
 		// Section Gif
 		GraphicsSystem.GetInstance().DrawText("Selectionnez un gif:", gifSectionPoint, Color.BLACK);
 		selectedGifTextBox.Draw(10);
 		gifSelectionMenu.Draw(10);
-		GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/GIF/" + selectedGif),  new Rectangle(gifSectionPoint.x + 420, gifSectionPoint.y - 75, 280, 280) , 1);
+		GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/GIF/" + selectedGif),  new Rectangle(gifSectionPoint.x + 390, gifSectionPoint.y - 25, 280, 280) , 1);
 		
 		// Section Classification
 		GraphicsSystem.GetInstance().DrawText("Classification:", classificationSectionPoint, Color.BLACK);
@@ -249,6 +259,9 @@ public class AddAnimalLevel extends ALevel {
 		// Section Ajout
 		addButton.Draw(10);
 		
+		if(drawEmptyError)
+			GraphicsSystem.GetInstance().DrawText("Merci de spécifier tous les champs.", errorSectionPoint, Color.RED);
+		
 	}
 	
 	private void RefreshSelectionMenuGif() throws Exception{
@@ -276,6 +289,15 @@ public class AddAnimalLevel extends ALevel {
 	}
 	
 	private void AddAnimalToXmlFile() throws Exception {
+		
+		if(nomInputBox.GetText().isBlank() || selectedGif.isBlank() || embranchementInputBox.GetText().isEmpty() || classeInputBox.GetText().isBlank() || familleInputBox.GetText().isBlank() 
+				|| genreInputBox.GetText().isBlank() || nomScientifiqueInputBox.GetText().isBlank() || selectedLocalisations.isBlank() || longeviteMaxInputBox.GetText().isBlank() 
+				|| poidsMaxInputBox.GetText().isBlank() || longeviteMaxInputBox.GetText().isBlank() || typeDePeauInputBox.GetText().isBlank() 
+				|| regimeAlimentaireInputBox.GetText().isBlank() || vitesseMaxInputBox.GetText().isBlank()) {
+			drawEmptyError = true;
+			return;
+		}
+		
 		XMLManager xmlManagerInstance = XMLManager.GetInstance();
 		
 		Document animauxXML = xmlManagerInstance.GetDocument("./Assets/XML/animaux.xml");
@@ -285,7 +307,7 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Creation element animal
 		Element animalElement = animauxXML.createElement("animal");
-		animalElement.setAttribute("name", "Vache");
+		animalElement.setAttribute("nom", nomInputBox.GetText());
 		
 		// Creation element gif
 		Element gifElement = animauxXML.createElement("gif");
@@ -335,28 +357,32 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Creation et Ajout des elements fils de caracteristique
 		Element longueurMaxElement = animauxXML.createElement("longueur_max");
+		longueurMaxElement.setAttribute("unite", LongueurMaxSelectedUnit);
 		longueurMaxElement.setTextContent(longeviteMaxInputBox.GetText());
-		classificationElement.appendChild(longueurMaxElement);
+		caracteristiqueElement.appendChild(longueurMaxElement);
 		
 		Element poidsMaxElement = animauxXML.createElement("poids_max");
+		poidsMaxElement.setAttribute("unite", poidsMaxSelectedUnit);
 		poidsMaxElement.setTextContent(poidsMaxInputBox.GetText());
-		classificationElement.appendChild(poidsMaxElement);
+		caracteristiqueElement.appendChild(poidsMaxElement);
 		
 		Element longeviteMaxElement = animauxXML.createElement("longevite_max");
+		longeviteMaxElement.setAttribute("unite", longeviteSelectedUnit);
 		longeviteMaxElement.setTextContent(longeviteMaxInputBox.GetText());
-		classificationElement.appendChild(longeviteMaxElement);
+		caracteristiqueElement.appendChild(longeviteMaxElement);
 		
 		Element typeDePeauElement = animauxXML.createElement("type_peau");
 		typeDePeauElement.setTextContent(typeDePeauInputBox.GetText());
-		classificationElement.appendChild(typeDePeauElement);
+		caracteristiqueElement.appendChild(typeDePeauElement);
 		
 		Element regimeAlimentaireElement = animauxXML.createElement("regime");
 		regimeAlimentaireElement.setTextContent(regimeAlimentaireInputBox.GetText());
-		classificationElement.appendChild(regimeAlimentaireElement);
+		caracteristiqueElement.appendChild(regimeAlimentaireElement);
 		
 		Element vitesseMaxElement = animauxXML.createElement("vitesse_max");
+		vitesseMaxElement.setAttribute("unite",vitesseMaxSelectedUnit);
 		vitesseMaxElement.setTextContent(vitesseMaxInputBox.GetText());
-		classificationElement.appendChild(vitesseMaxElement);
+		caracteristiqueElement.appendChild(vitesseMaxElement);
 		
 		
 		// Ajout des elements fils de animal
@@ -369,6 +395,8 @@ public class AddAnimalLevel extends ALevel {
 		animauxElement.appendChild(animalElement);
 		
 		xmlManagerInstance.WriteToFile(animauxXML, "./Assets/XML/animaux.xml");
+		
+		//Retour au menu
 	}
 	
 	private final Point gifSectionPoint;
@@ -376,6 +404,10 @@ public class AddAnimalLevel extends ALevel {
 	private final Point caracteristiqueSectionPoint;
 	private final Point localistaionSectionPoint;
 	private final Point addSectionPoint;
+	private final Point nomSectionPoint;
+	private final Point errorSectionPoint;
+	
+	private UIInputBox nomInputBox;
 	
 	private UITextBox selectedGifTextBox;
 	private UISelectionMenu gifSelectionMenu;
@@ -401,7 +433,7 @@ public class AddAnimalLevel extends ALevel {
 	private UIInputBox longeviteMaxInputBox;
 	private UIButton longeviteMaxUnitChoice1Button;
 	private UIButton longeviteMaxUnitChoice2Button;
-	private String longeviteSelectedUnit = "annees";
+	private String longeviteSelectedUnit = "années";
 	private UIInputBox typeDePeauInputBox;
 	private UIInputBox regimeAlimentaireInputBox;
 	private UIInputBox vitesseMaxInputBox;
@@ -414,6 +446,8 @@ public class AddAnimalLevel extends ALevel {
 	private String selectedLocalisations = "";
 	
 	private UIButton addButton;
+	
+	private boolean drawEmptyError = false;
 	
 	private final String AUTHORIZEDCHARDECIMAL = "0123456789.";
 	private final String AUTHORIZEDCHARINTEGER = "0123456789";

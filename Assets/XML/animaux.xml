@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
+<?xml version="1.0" encoding="UTF-8"?><animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
     <animal nom="Vache">
         <gif src="/Assets.GIF/vache.gif"/>
         <classification>
@@ -12,11 +10,11 @@
             <nom_scientifique>Bos taurus</nom_scientifique>
         </classification>
         <localisations>
-        	<localisation>Afrique</localisation>
+            <localisation>Afrique</localisation>
             <localisation>Asie</localisation>
-        	<localisation>Europe</localisation>
+            <localisation>Europe</localisation>
             <localisation>Amérique</localisation>
-        	<localisation>Océanie</localisation>
+            <localisation>Océanie</localisation>
         </localisations>
         <caracteristique>
             <longueur_max unite="m">1.8</longueur_max>
