@@ -2,6 +2,7 @@ package ParserEngine;
 
 import java.io.File;
 
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
@@ -18,6 +19,7 @@ class XMLWriter{
     public void WriteDocumentToFile(Document document, String path) throws Exception{
         DOMSource source = new DOMSource(document);
         StreamResult output = new StreamResult(new File(path));
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.transform(source, output);
     }
 

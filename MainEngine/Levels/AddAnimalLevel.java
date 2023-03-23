@@ -10,9 +10,14 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 import CoreEngine.Mouse;
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
+import ParserEngine.XMLManager;
+import ParserEngine.XMLQuerier;
 import UIEngine.UIButton;
 import UIEngine.UIButton.Lambda;
 import UIEngine.UIInputBox;
@@ -60,38 +65,38 @@ public class AddAnimalLevel extends ALevel {
 		vitesseMaxInputBox = new UIInputBox(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170, caracteristiqueSectionPoint.y + 30 + 250, 160, 30), "");
 		
 		LongueurMaxInputBox.SetNewMaximalSize(10);
-		LongueurMaxInputBox.SetNewAuthorizedChar("0123456789.");
+		LongueurMaxInputBox.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
 		poidsMaxInputBox.SetNewMaximalSize(10);
-		poidsMaxInputBox.SetNewAuthorizedChar("0123456789.");
+		poidsMaxInputBox.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
 		longeviteMaxInputBox.SetNewMaximalSize(10);
-		longeviteMaxInputBox.SetNewAuthorizedChar("0123456789");
+		longeviteMaxInputBox.SetNewAuthorizedChar(AUTHORIZEDCHARINTEGER);
 		typeDePeauInputBox.SetNewMaximalSize(15);
 		regimeAlimentaireInputBox.SetNewMaximalSize(15);
 		vitesseMaxInputBox.SetNewMaximalSize(10);
-		vitesseMaxInputBox.SetNewAuthorizedChar("0123456789.");
+		vitesseMaxInputBox.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
 		
-		LongueurMaxUnitChoice1 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30, 40, 30), "m",
+		LongueurMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30, 40, 30), "m",
 				() -> {LongueurMaxSelectedUnit = "m";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		LongueurMaxUnitChoice2 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30, 40, 30), "mm",
+		LongueurMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30, 40, 30), "mm",
 				() -> {LongueurMaxSelectedUnit = "mm";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
-		poidsMaxInputBoxUnitChoice1 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "t",
+		poidsMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "t",
 				() -> {poidsMaxSelectedUnit = "t";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		poidsMaxInputBoxUnitChoice2 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "kg",
+		poidsMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "kg",
 				() -> {poidsMaxSelectedUnit = "kg";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		poidsMaxInputBoxUnitChoice3 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "g",
+		poidsMaxUnitChoice3Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "g",
 				() -> {poidsMaxSelectedUnit = "g";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		poidsMaxInputBoxUnitChoice4 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 120, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "mg",
+		poidsMaxUnitChoice4Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 120, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "mg",
 				() -> {poidsMaxSelectedUnit = "mg";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
-		longeviteMaxInputBoxUnitChoice1 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 100, 80, 30), "annees",
+		longeviteMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 100, 80, 30), "annees",
 				() -> {longeviteSelectedUnit = "annees";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		longeviteMaxInputBoxUnitChoice2 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30 + 100, 60, 30), "jours",
+		longeviteMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30 + 100, 60, 30), "jours",
 				() -> {longeviteSelectedUnit = "jours";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
-		vitesseMaxInputBoxUnitChoice1 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 250, 60, 30), "km/h",
+		vitesseMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 250, 60, 30), "km/h",
 				() -> {vitesseMaxSelectedUnit = "km/h";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		vitesseMaxInputBoxUnitChoice2 = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 60, caracteristiqueSectionPoint.y + 30 + 250, 40, 30), "m/s",
+		vitesseMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 60, caracteristiqueSectionPoint.y + 30 + 250, 40, 30), "m/s",
 				() -> {vitesseMaxSelectedUnit = "m/s";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
 		LongueurMaxInputBox.SetText(" " + LongueurMaxSelectedUnit);
@@ -116,7 +121,7 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Section Ajout
 		
-		addButton = new UIButton(new Rectangle(addSectionPoint.x, addSectionPoint.y, 100, 50), "Ajouter", () -> {}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		addButton = new UIButton(new Rectangle(addSectionPoint.x, addSectionPoint.y, 100, 50), "Ajouter", () -> {AddAnimalToXmlFile();}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 	}
 
 	@Override
@@ -133,6 +138,14 @@ public class AddAnimalLevel extends ALevel {
 		longeviteMaxInputBox.SetText(longeviteMaxInputBox.GetText().substring(0, longeviteMaxInputBox.GetText().length() - (longeviteSelectedUnit.length() + 1)));
 		vitesseMaxInputBox.SetText(vitesseMaxInputBox.GetText().substring(0, vitesseMaxInputBox.GetText().length() - (vitesseMaxSelectedUnit.length() + 1)));
 		
+		// Permets de restreindre les champs a l'utilisation d'un seul point
+		UIInputBox[] decimalInputs = {LongueurMaxInputBox, poidsMaxInputBox, vitesseMaxInputBox};
+		for(UIInputBox decimalInput : decimalInputs)
+			if(decimalInput.GetText().contains("."))
+				decimalInput.SetNewAuthorizedChar(AUTHORIZEDCHARINTEGER);
+			else
+				decimalInput.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
+		
 		// Section Gif
 		selectedGifTextBox.SetText(selectedGif);
 		gifSelectionMenu.Update();
@@ -148,21 +161,21 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Section Caracteristique
 		LongueurMaxInputBox.Update();
-		LongueurMaxUnitChoice1.Update();
-		LongueurMaxUnitChoice2.Update();
+		LongueurMaxUnitChoice1Button.Update();
+		LongueurMaxUnitChoice2Button.Update();
 		poidsMaxInputBox.Update();
-		poidsMaxInputBoxUnitChoice1.Update();
-		poidsMaxInputBoxUnitChoice2.Update();
-		poidsMaxInputBoxUnitChoice3.Update();
-		poidsMaxInputBoxUnitChoice4.Update();
+		poidsMaxUnitChoice1Button.Update();
+		poidsMaxUnitChoice2Button.Update();
+		poidsMaxUnitChoice3Button.Update();
+		poidsMaxUnitChoice4Button.Update();
 		longeviteMaxInputBox.Update();
-		longeviteMaxInputBoxUnitChoice1.Update();
-		longeviteMaxInputBoxUnitChoice2.Update();
+		longeviteMaxUnitChoice1Button.Update();
+		longeviteMaxUnitChoice2Button.Update();
 		typeDePeauInputBox.Update();
 		regimeAlimentaireInputBox.Update();
 		vitesseMaxInputBox.Update();
-		vitesseMaxInputBoxUnitChoice1.Update();
-		vitesseMaxInputBoxUnitChoice2.Update();
+		vitesseMaxUnitChoice1Button.Update();
+		vitesseMaxUnitChoice2Button.Update();
 		
 		// Section Localistaion
 		selectedLocalisationsTextBox.SetText(selectedLocalisations);
@@ -207,26 +220,26 @@ public class AddAnimalLevel extends ALevel {
 		GraphicsSystem.GetInstance().DrawText("Caractéristique:", caracteristiqueSectionPoint, Color.BLACK);
 		GraphicsSystem.GetInstance().DrawText("Longueur max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 50), Color.BLACK);
 		LongueurMaxInputBox.Draw(10);
-		LongueurMaxUnitChoice1.Draw(10);
-		LongueurMaxUnitChoice2.Draw(10);	
+		LongueurMaxUnitChoice1Button.Draw(10);
+		LongueurMaxUnitChoice2Button.Draw(10);	
 		GraphicsSystem.GetInstance().DrawText("Poids max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 100), Color.BLACK);
 		poidsMaxInputBox.Draw(10);
-		poidsMaxInputBoxUnitChoice1.Draw(10);
-		poidsMaxInputBoxUnitChoice2.Draw(10);
-		poidsMaxInputBoxUnitChoice3.Draw(10);
-		poidsMaxInputBoxUnitChoice4.Draw(10);	
+		poidsMaxUnitChoice1Button.Draw(10);
+		poidsMaxUnitChoice2Button.Draw(10);
+		poidsMaxUnitChoice3Button.Draw(10);
+		poidsMaxUnitChoice4Button.Draw(10);	
 		GraphicsSystem.GetInstance().DrawText("Longevite max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 150), Color.BLACK);
 		longeviteMaxInputBox.Draw(10);
-		longeviteMaxInputBoxUnitChoice1.Draw(10);
-		longeviteMaxInputBoxUnitChoice2.Draw(10);	
+		longeviteMaxUnitChoice1Button.Draw(10);
+		longeviteMaxUnitChoice2Button.Draw(10);	
 		GraphicsSystem.GetInstance().DrawText("Type de peau:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 200), Color.BLACK);
 		typeDePeauInputBox.Draw(10);	
 		GraphicsSystem.GetInstance().DrawText("Regime alimentaire:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 250), Color.BLACK);
 		regimeAlimentaireInputBox.Draw(10);
 		GraphicsSystem.GetInstance().DrawText("Vitesse max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 300), Color.BLACK);
 		vitesseMaxInputBox.Draw(10);
-		vitesseMaxInputBoxUnitChoice1.Draw(10);
-		vitesseMaxInputBoxUnitChoice2.Draw(10);
+		vitesseMaxUnitChoice1Button.Draw(10);
+		vitesseMaxUnitChoice2Button.Draw(10);
 		
 		// Section Localisations
 		GraphicsSystem.GetInstance().DrawText("Localisations:", localistaionSectionPoint, Color.BLACK);
@@ -262,6 +275,102 @@ public class AddAnimalLevel extends ALevel {
 		};
 	}
 	
+	private void AddAnimalToXmlFile() throws Exception {
+		XMLManager xmlManagerInstance = XMLManager.GetInstance();
+		
+		Document animauxXML = xmlManagerInstance.GetDocument("./Assets/XML/animaux.xml");
+		
+		// Recuperation de l'element root animaux
+		Element animauxElement = animauxXML.getDocumentElement();
+		
+		// Creation element animal
+		Element animalElement = animauxXML.createElement("animal");
+		animalElement.setAttribute("name", "Vache");
+		
+		// Creation element gif
+		Element gifElement = animauxXML.createElement("gif");
+		gifElement.setAttribute("src", "./Assets/GIF/" + selectedGif);
+		
+		// Creation element classification
+		Element classificationElement = animauxXML.createElement("classification");
+		
+		// Creation et Ajout des elements fils de classification
+		Element embranchementElement = animauxXML.createElement("embranchement");
+		embranchementElement.setTextContent(embranchementInputBox.GetText());
+		classificationElement.appendChild(embranchementElement);
+		
+		Element classeElement = animauxXML.createElement("classe");
+		classeElement.setTextContent(classeInputBox.GetText());
+		classificationElement.appendChild(classeElement);
+		
+		Element ordreElement = animauxXML.createElement("ordre");
+		ordreElement.setTextContent(ordreInputBox.GetText());
+		classificationElement.appendChild(ordreElement);
+		
+		Element familleElement = animauxXML.createElement("famille");
+		familleElement.setTextContent(familleInputBox.GetText());
+		classificationElement.appendChild(familleElement);
+
+		Element genreElement = animauxXML.createElement("genre");
+		classeElement.setTextContent(genreInputBox.GetText());
+		classificationElement.appendChild(genreElement);
+		
+		Element nomScientifiqueElement = animauxXML.createElement("nom_scientifique");
+		nomScientifiqueElement.setTextContent(nomScientifiqueInputBox.GetText());
+		classificationElement.appendChild(nomScientifiqueElement);
+		
+		// Creation element localisations
+		Element localisationsElement = animauxXML.createElement("localisations");
+		
+		// Creation et Ajout des elements fils de localisations
+		String[] localisations = selectedLocalisations.split(", ");
+		for(String localisation : localisations) {
+			Element localisationElement = animauxXML.createElement("localisation");
+			localisationElement.setTextContent(localisation);
+			localisationsElement.appendChild(localisationElement);
+		}
+		
+		// Creation element caracteristique
+		Element caracteristiqueElement = animauxXML.createElement("caracteristique");
+		
+		// Creation et Ajout des elements fils de caracteristique
+		Element longueurMaxElement = animauxXML.createElement("longueur_max");
+		longueurMaxElement.setTextContent(longeviteMaxInputBox.GetText());
+		classificationElement.appendChild(longueurMaxElement);
+		
+		Element poidsMaxElement = animauxXML.createElement("poids_max");
+		poidsMaxElement.setTextContent(poidsMaxInputBox.GetText());
+		classificationElement.appendChild(poidsMaxElement);
+		
+		Element longeviteMaxElement = animauxXML.createElement("longevite_max");
+		longeviteMaxElement.setTextContent(longeviteMaxInputBox.GetText());
+		classificationElement.appendChild(longeviteMaxElement);
+		
+		Element typeDePeauElement = animauxXML.createElement("type_peau");
+		typeDePeauElement.setTextContent(typeDePeauInputBox.GetText());
+		classificationElement.appendChild(typeDePeauElement);
+		
+		Element regimeAlimentaireElement = animauxXML.createElement("regime");
+		regimeAlimentaireElement.setTextContent(regimeAlimentaireInputBox.GetText());
+		classificationElement.appendChild(regimeAlimentaireElement);
+		
+		Element vitesseMaxElement = animauxXML.createElement("vitesse_max");
+		vitesseMaxElement.setTextContent(vitesseMaxInputBox.GetText());
+		classificationElement.appendChild(vitesseMaxElement);
+		
+		
+		// Ajout des elements fils de animal
+		animalElement.appendChild(gifElement);
+		animalElement.appendChild(classificationElement);
+		animalElement.appendChild(localisationsElement);
+		animalElement.appendChild(caracteristiqueElement);
+		
+		// Ajout de l'element fils de animaux
+		animauxElement.appendChild(animalElement);
+		
+		xmlManagerInstance.WriteToFile(animauxXML, "./Assets/XML/animaux.xml");
+	}
+	
 	private final Point gifSectionPoint;
 	private final Point classificationSectionPoint;
 	private final Point caracteristiqueSectionPoint;
@@ -280,24 +389,24 @@ public class AddAnimalLevel extends ALevel {
 	private UIInputBox nomScientifiqueInputBox;
 	
 	private UIInputBox LongueurMaxInputBox;
-	private UIButton LongueurMaxUnitChoice1;
-	private UIButton LongueurMaxUnitChoice2;
+	private UIButton LongueurMaxUnitChoice1Button;
+	private UIButton LongueurMaxUnitChoice2Button;
 	private String LongueurMaxSelectedUnit = "m";
 	private UIInputBox poidsMaxInputBox;
-	private UIButton poidsMaxInputBoxUnitChoice1;
-	private UIButton poidsMaxInputBoxUnitChoice2;
-	private UIButton poidsMaxInputBoxUnitChoice3;
-	private UIButton poidsMaxInputBoxUnitChoice4;
+	private UIButton poidsMaxUnitChoice1Button;
+	private UIButton poidsMaxUnitChoice2Button;
+	private UIButton poidsMaxUnitChoice3Button;
+	private UIButton poidsMaxUnitChoice4Button;
 	private String poidsMaxSelectedUnit = "t";
 	private UIInputBox longeviteMaxInputBox;
-	private UIButton longeviteMaxInputBoxUnitChoice1;
-	private UIButton longeviteMaxInputBoxUnitChoice2;
+	private UIButton longeviteMaxUnitChoice1Button;
+	private UIButton longeviteMaxUnitChoice2Button;
 	private String longeviteSelectedUnit = "annees";
 	private UIInputBox typeDePeauInputBox;
 	private UIInputBox regimeAlimentaireInputBox;
 	private UIInputBox vitesseMaxInputBox;
-	private UIButton vitesseMaxInputBoxUnitChoice1;
-	private UIButton vitesseMaxInputBoxUnitChoice2;
+	private UIButton vitesseMaxUnitChoice1Button;
+	private UIButton vitesseMaxUnitChoice2Button;
 	private String vitesseMaxSelectedUnit = "km/h";
 	
 	private UITextBox selectedLocalisationsTextBox;
@@ -305,5 +414,8 @@ public class AddAnimalLevel extends ALevel {
 	private String selectedLocalisations = "";
 	
 	private UIButton addButton;
+	
+	private final String AUTHORIZEDCHARDECIMAL = "0123456789.";
+	private final String AUTHORIZEDCHARINTEGER = "0123456789";
 	
 }

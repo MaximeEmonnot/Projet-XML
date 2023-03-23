@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<animals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
     <animal nom="Vache">
         <gif src="/Assets.GIF/vache.gif"/>
@@ -24,7 +24,7 @@
             <longevite_max unite="années">20</longevite_max>
             <type_peau>cuir</type_peau>
             <regime>Herbivore</regime>
-            <vitesse_max unite="km/h">25.5</vitesse_max>
+            <vitesse_max unite="km/h">5</vitesse_max>
         </caracteristique>
     </animal>
-</animals>
+</animaux>
