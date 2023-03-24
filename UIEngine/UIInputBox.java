@@ -64,13 +64,17 @@ public class UIInputBox {
         text = _text;
     }
     
+    public void SetDescription(String newDescription){
+        description = newDescription;
+    }
+    
     private Rectangle rect;
     private String description;
     private String text = "";
     private boolean bIsFocused = false;
     private String authorizedChar = "";
     private int maximalSize = Integer.MAX_VALUE;
-    private final static String defaultAuthorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"°+-*@&йикащзІ{([|])}=_><%$Ђ#~ ";
+    private final static String defaultAuthorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"пїЅ+-*@&пїЅпїЅпїЅпїЅпїЅпїЅ{([|])}=_><%$пїЅ#~ ";
     private final static int FONTSIZE = 16;
     
 }

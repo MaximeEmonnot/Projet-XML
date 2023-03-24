@@ -1,30 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
+        
     <animal nom="Vache">
+                
         <gif src="/Assets.GIF/vache.gif"/>
+                
         <classification>
+                        
             <embranchement>Chordés</embranchement>
+                        
             <classe>Mammifères</classe>
+                        
             <ordre>Artodactyla</ordre>
+                        
             <famille>Bovidés</famille>
+                        
             <genre>Bos</genre>
+                        
             <nom_scientifique>Bos taurus</nom_scientifique>
+                    
+        </classification>
+                
+        <localisations>
+                    	
+            <localisation>Afrique</localisation>
+                        
+            <localisation>Asie</localisation>
+                    	
+            <localisation>Europe</localisation>
+                        
+            <localisation>Amérique</localisation>
+                    	
+            <localisation>Océanie</localisation>
+                    
+        </localisations>
+                
+        <caracteristique>
+                        
+            <longueur_max unite="m">1.8</longueur_max>
+                        
+            <poids_max unite="kg">800</poids_max>
+                        
+            <longevite_max unite="années">20</longevite_max>
+                        
+            <type_peau>cuir</type_peau>
+                        
+            <regime>Herbivore</regime>
+                        
+            <vitesse_max unite="km/h">5</vitesse_max>
+                    
+        </caracteristique>
+            
+    </animal>
+    
+    <animal name="Vache">
+        <gif src="./Assets/GIF/vache.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
         </classification>
         <localisations>
-        	<localisation>Afrique</localisation>
-            <localisation>Asie</localisation>
-        	<localisation>Europe</localisation>
-            <localisation>Amérique</localisation>
-        	<localisation>Océanie</localisation>
+            <localisation/>
         </localisations>
-        <caracteristique>
-            <longueur_max unite="m">1.8</longueur_max>
-            <poids_max unite="kg">800</poids_max>
-            <longevite_max unite="années">20</longevite_max>
-            <type_peau>cuir</type_peau>
-            <regime>Herbivore</regime>
-            <vitesse_max unite="km/h">5</vitesse_max>
-        </caracteristique>
+        <caracteristique/>
+    </animal>
+    <animal name="Vache">
+        <gif src="./Assets/GIF/vache.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
     </animal>
 </animaux>

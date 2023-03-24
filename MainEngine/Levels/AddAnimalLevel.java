@@ -19,7 +19,7 @@ import GraphicsEngine.SpriteFactory;
 import ParserEngine.XMLManager;
 import ParserEngine.XMLQuerier;
 import UIEngine.UIButton;
-import UIEngine.UIButton.Lambda;
+import UIEngine.UILambda;
 import UIEngine.UIInputBox;
 import UIEngine.UISelectionMenu;
 import UIEngine.UITextBox;
@@ -108,14 +108,14 @@ public class AddAnimalLevel extends ALevel {
 		selectedLocalisationsTextBox = new UITextBox(new Rectangle(localistaionSectionPoint.x + 170, localistaionSectionPoint.y - 20, 450, 30), selectedLocalisations);
 		LocalisationSelectionMenu = new UISelectionMenu(new Rectangle(localistaionSectionPoint.x + 170,  localistaionSectionPoint.y - 20 + 30, 180, 120 ));
 		
-		LinkedHashMap<String, UIButton.Lambda> items = new LinkedHashMap<String, UIButton.Lambda>();
+		LinkedHashMap<String, UILambda> items = new LinkedHashMap<String, UILambda>();
 		
 		items.put("Afrique", GetLocalisationItemLambdaFunct("Afrique"));
-		items.put("Amérique", GetLocalisationItemLambdaFunct("Amérique"));
+		items.put("AmÃ©rique", GetLocalisationItemLambdaFunct("AmÃ©rique"));
 		items.put("Antarctique", GetLocalisationItemLambdaFunct("Antarctique"));
 		items.put("Asie", GetLocalisationItemLambdaFunct("Asie"));
 		items.put("Europe", GetLocalisationItemLambdaFunct("Europe"));
-		items.put("Océanie", GetLocalisationItemLambdaFunct("Océanie"));
+		items.put("OcÃ©anie", GetLocalisationItemLambdaFunct("OcÃ©anie"));
 		
 		LocalisationSelectionMenu.UpdateSelections(items);
 		
@@ -184,7 +184,7 @@ public class AddAnimalLevel extends ALevel {
 		// Section Ajout
 		addButton.Update();
 		
-		// Remets l'unite, après que l'utilisateur a modifie l'inputBox
+		// Remets l'unite, aprï¿½s que l'utilisateur a modifie l'inputBox
 		LongueurMaxInputBox.SetText(LongueurMaxInputBox.GetText() + " " + LongueurMaxSelectedUnit);
 		poidsMaxInputBox.SetText(poidsMaxInputBox.GetText() + " " + poidsMaxSelectedUnit);
 		longeviteMaxInputBox.SetText(longeviteMaxInputBox.GetText() + " " + longeviteSelectedUnit);
@@ -216,8 +216,8 @@ public class AddAnimalLevel extends ALevel {
 		GraphicsSystem.GetInstance().DrawText("Nom scientifique:", new Point(classificationSectionPoint.x + 50, classificationSectionPoint.y + 300), Color.BLACK);
 		nomScientifiqueInputBox.Draw(10);
 		
-		// Section Caractéristique
-		GraphicsSystem.GetInstance().DrawText("Caractéristique:", caracteristiqueSectionPoint, Color.BLACK);
+		// Section Caractï¿½ristique
+		GraphicsSystem.GetInstance().DrawText("Caractï¿½ristique:", caracteristiqueSectionPoint, Color.BLACK);
 		GraphicsSystem.GetInstance().DrawText("Longueur max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 50), Color.BLACK);
 		LongueurMaxInputBox.Draw(10);
 		LongueurMaxUnitChoice1Button.Draw(10);
@@ -252,7 +252,7 @@ public class AddAnimalLevel extends ALevel {
 	}
 	
 	private void RefreshSelectionMenuGif() throws Exception{
-    	LinkedHashMap<String, UIButton.Lambda> items = new LinkedHashMap<String, UIButton.Lambda>();
+    	LinkedHashMap<String, UILambda> items = new LinkedHashMap<String, UILambda>();
     	
     	final File folder = new File("./Assets/GIF");
     	for (final File fileEntry : folder.listFiles()) {
@@ -264,7 +264,7 @@ public class AddAnimalLevel extends ALevel {
     	gifSelectionMenu.UpdateSelections(items);
     }
 	
-	private UIButton.Lambda GetLocalisationItemLambdaFunct(String name) {
+	private UILambda GetLocalisationItemLambdaFunct(String name) {
 		return () -> {
 			List<String> selectedLocalisationsList = !selectedLocalisations.isEmpty() ? new ArrayList<String>(Arrays.asList(selectedLocalisations.split(", "))) : new ArrayList<String>();
 			if(selectedLocalisationsList.contains(name)) 

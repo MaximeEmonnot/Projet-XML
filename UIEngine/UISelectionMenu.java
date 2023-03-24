@@ -12,14 +12,14 @@ public class UISelectionMenu {
 	
 	public UISelectionMenu(Rectangle _rect) {
 		this.rect = _rect;
-		items = new LinkedHashMap<String, UIButton.Lambda>();
+		items = new LinkedHashMap<String, UILambda>();
 		buttons = new ArrayList<UIButton>();
 		rect.height -= rect.height % ITEM_HEIGHT;
 		scrollBarHeight = items.size() <= MaxItems() ? rect.height : rect.height / ((float)items.size() /  MaxItems());
 		UpdateButtons();
 	}
 	
-	public void UpdateSelections(LinkedHashMap<String, UIButton.Lambda> _items) {
+	public void UpdateSelections(LinkedHashMap<String, UILambda> _items) {
 		if(items.keySet().equals(_items.keySet()))
 			return;
 		this.items = _items;
@@ -87,7 +87,7 @@ public class UISelectionMenu {
 	}
 	
 	private Rectangle rect;
-	private LinkedHashMap<String, UIButton.Lambda> items;
+	private LinkedHashMap<String, UILambda> items;
 	private ArrayList<UIButton> buttons;
 	private int scrollPosition = 0;
 	private float scrollBarHeight;
