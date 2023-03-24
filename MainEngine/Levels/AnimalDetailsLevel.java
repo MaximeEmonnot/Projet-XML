@@ -7,6 +7,7 @@ import java.util.List;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import AudioEngine.AudioManager;
 import GraphicsEngine.*;
 import MainEngine.LevelManager;
 import UIEngine.UIButton;
@@ -19,6 +20,9 @@ public class AnimalDetailsLevel extends ALevel {
 
         backButton = new UIButton(new Rectangle(100, 590, 250, 75), "Back to list", 
         () -> {LevelManager.GetInstance().SetLevel("Animal List Level");}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+
+        playShout = new UIButton(new Rectangle(390, 515, 150, 40), "Cri",
+        () -> {}, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
     }
 
     @Override
@@ -93,7 +97,7 @@ public class AnimalDetailsLevel extends ALevel {
                             break;
                             case "longevite_max" :
                             {
-                                poids = info.getTextContent() + " " + info.getAttributes().getNamedItem("unite").getTextContent();
+                                longevite = info.getTextContent() + " " + info.getAttributes().getNamedItem("unite").getTextContent();
                             }
                             break;
                             case "type_peau" :
@@ -110,6 +114,11 @@ public class AnimalDetailsLevel extends ALevel {
                                 vitesse = info.getTextContent() + " " + info.getAttributes().getNamedItem("unite").getTextContent();
                             }  
                             break;
+                            case "cri" : {
+                                playShout.SetFunction(() -> {
+                                    AudioManager.GetInstance().PlaySound(info.getAttributes().getNamedItem("src").getTextContent());
+                                });
+                            }
                             default: break;
                         }
                     }
@@ -123,6 +132,7 @@ public class AnimalDetailsLevel extends ALevel {
     @Override
     public void Update() throws Exception {
         backButton.Update();
+        playShout.Update();
     }
 
     @Override
@@ -177,6 +187,7 @@ public class AnimalDetailsLevel extends ALevel {
         GraphicsSystem.GetInstance().DrawText("Type de peau : " + typePeau, new Point(800, 405), Color.BLACK, 7);
         GraphicsSystem.GetInstance().DrawText("Régime : " + regime, new Point(800, 450), Color.BLACK, 7);
         GraphicsSystem.GetInstance().DrawText("Vitesse : " + vitesse, new Point(800, 495), Color.BLACK, 7);
+        playShout.Draw(10);
 
         backButton.Draw(10);
     }
@@ -197,4 +208,5 @@ public class AnimalDetailsLevel extends ALevel {
     private String typePeau;
     private String regime;
     private String vitesse;
+    private UIButton playShout;
 }

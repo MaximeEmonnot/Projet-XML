@@ -3,11 +3,8 @@ package MainEngine.Levels;
 import java.awt.*;
 import java.util.List;
 
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import CoreEngine.Mouse;
 
 import java.util.ArrayList;
 
@@ -24,6 +21,10 @@ public class AnimalListLevel extends ALevel {
 
         addNewAnimal = new UIButton(new Rectangle(925, 590, 250, 75), "Add new animal", 
         () -> { LevelManager.GetInstance().SetLevel("Add Animal Level"); }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+        previous = new UIButton(new Rectangle(1190, 162, 50, 150), "↑",
+        () -> { pageIndex--; }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+        next = new UIButton(new Rectangle(1190, 312, 50, 150), "↓",
+        () -> { pageIndex++; }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
     }
 
     @Override
@@ -57,11 +58,8 @@ public class AnimalListLevel extends ALevel {
     @Override
     public void Update() throws Exception {
         
-        switch(Mouse.GetInstance().Read()){
-            case WheelDown: if (++pageIndex * 8 >= cards.size()) pageIndex--; break;
-            case WheelUp: if (--pageIndex < 0) pageIndex = 0; break;
-            default: break;
-        }
+        if (pageIndex - 1 >= 0) previous.Update();
+        if ((pageIndex + 1) * 8 < cards.size()) next.Update(); 
 
         for (int i = pageIndex * 8; i < ((pageIndex + 1) * 8 < cards.size() ? pageIndex * 8 + 8 : cards.size()); i++){
             UICard card = cards.get(i);
@@ -81,10 +79,19 @@ public class AnimalListLevel extends ALevel {
 
         for (int i = pageIndex * 8; i < ((pageIndex + 1) * 8 < cards.size() ? pageIndex * 8 + 8 : cards.size()); i++) cards.get(i).Draw(10);
 
+        if (pageIndex - 1 >= 0) previous.Draw(10);
+        if ((pageIndex + 1) * 8 < cards.size()) next.Draw(10); 
+
         addNewAnimal.Draw(15);
+        
+        GraphicsSystem.GetInstance().DrawRect(new Rectangle(1190, 590, 50, 50), Color.WHITE, true, 15);
+        GraphicsSystem.GetInstance().DrawRect(new Rectangle(1190, 590, 50, 50), Color.BLACK, false, 15);
+        GraphicsSystem.GetInstance().DrawText(Integer.toString(pageIndex + 1) + " / " + Integer.toString((int)(cards.size() / 8) + 1), new Point(1200, 622), Color.BLACK, 15);
     }
     
     private List<UICard> cards = new ArrayList<UICard>();
     private int pageIndex = 0;
     private UIButton addNewAnimal;
+    private UIButton previous;
+    private UIButton next;
 }

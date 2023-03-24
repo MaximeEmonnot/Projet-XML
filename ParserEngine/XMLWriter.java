@@ -1,7 +1,6 @@
 package ParserEngine;
 
 import java.io.File;
-import java.io.StringReader;
 
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
