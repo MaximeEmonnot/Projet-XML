@@ -13,6 +13,8 @@ import org.w3c.dom.Document;
 public class XMLReader {
     
     public XMLReader() throws Exception{
+        dbFactory.setIgnoringElementContentWhitespace(true);
+        dbFactory.setIgnoringComments(true);
         dBuilder = dbFactory.newDocumentBuilder();
     }
 

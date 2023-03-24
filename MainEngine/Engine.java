@@ -12,8 +12,8 @@ public class Engine {
     private Engine() throws Exception {
         // Initialisation des levels
         //LevelManager.GetInstance().AddLevel(new TestLevel("Test Level"));
-        //LevelManager.GetInstance().AddLevel(new AddAnimalLevel("add Animal Level"));
         LevelManager.GetInstance().AddLevel(new AnimalListLevel("Animal List Level"));
+        LevelManager.GetInstance().AddLevel(new AddAnimalLevel("Add Animal Level"));
     }
 
     public static Engine GetInstance() throws Exception {

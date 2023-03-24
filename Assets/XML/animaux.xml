@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
-    <animal nom="Vache">
+    <animal name="Vache">
                 
-        <gif src="/Assets.GIF/vache.gif"/>
+        <gif src="./Assets/GIF/vache.gif"/>
                 
         <classification>
                         
@@ -68,20 +68,310 @@
             <vitesse_max/>
         </classification>
         <localisations>
-<<<<<<< HEAD
-            <localisation/>
-=======
             <localisation>Afrique</localisation>
             <localisation>Asie</localisation>
             <localisation>Europe</localisation>
             <localisation>Amérique</localisation>
             <localisation>Océanie</localisation>
->>>>>>> 0ade4550878de0f99f146f8bda893a7d15e707eb
         </localisations>
         <caracteristique/>
     </animal>
     <animal name="Vache">
         <gif src="./Assets/GIF/vache.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+    <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+    <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+    <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+     <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+     <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+     <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+     <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+     <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+ <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+ <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+ <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+ <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+ <animal name="Chat">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>fhhgfdghyh</embranchement>
+            <classe/>
+            <ordre>ffghfdgh</ordre>
+            <famille>dfdghd</famille>
+            <genre/>
+            <nom_scientifique/>
+            <longueur_max/>
+            <poids_max/>
+            <longevite_max/>
+            <type_peau/>
+            <regime/>
+            <vitesse_max/>
+        </classification>
+        <localisations>
+            <localisation/>
+        </localisations>
+        <caracteristique/>
+    </animal>
+    <animal name="Humain">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
             <classe/>

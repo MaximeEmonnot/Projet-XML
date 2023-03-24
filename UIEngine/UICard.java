@@ -54,10 +54,10 @@ public class UICard {
         GraphicsSystem.GetInstance().DrawRect(rect, cardColor, true, priority);
         GraphicsSystem.GetInstance().DrawRect(rect, Color.BLACK, false, priority + 1);
 
-        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite(imagePath), new Rectangle(rect.x + (int)(rect.width * 0.1), rect.y + (int)(rect.height * 0.1), (int)(rect.width * 0.8), (int)(rect.height * 0.6)), priority + 2);
+        GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite(imagePath), new Rectangle(rect.x + (int)(rect.width * 0.1), rect.y + (int)(rect.height * 0.1), (int)(rect.width * 0.8), (int)(rect.height * 0.7)), priority + 2);
         GraphicsSystem.GetInstance().DrawText(text, new Point(
             rect.x + (int)((rect.width - text.length() * 8) / 2),
-            rect.y + (int)(0.8f * rect.height + 0.5f * FONTSIZE * 0.75f)
+            rect.y + (int)(0.9f * rect.height + 0.5f * FONTSIZE * 0.75f)
         ), new Font("Arial Bold", Font.PLAIN, FONTSIZE), Color.BLACK, priority + 3);
     }
 
