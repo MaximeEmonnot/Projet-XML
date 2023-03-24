@@ -5,15 +5,15 @@ import CoreEngine.Timer;
 import GraphicsEngine.GraphicsSystem;
 import MainEngine.Levels.AddAnimalLevel;
 import MainEngine.Levels.AnimalListLevel;
-import MainEngine.Levels.TestLevel;
+import MainEngine.Levels.AnimalDetailsLevel;
 
 public class Engine {
     
     private Engine() throws Exception {
         // Initialisation des levels
-        //LevelManager.GetInstance().AddLevel(new TestLevel("Test Level"));
         LevelManager.GetInstance().AddLevel(new AnimalListLevel("Animal List Level"));
         LevelManager.GetInstance().AddLevel(new AddAnimalLevel("Add Animal Level"));
+        LevelManager.GetInstance().AddLevel(new AnimalDetailsLevel("Animal Details Level"));
     }
 
     public static Engine GetInstance() throws Exception {

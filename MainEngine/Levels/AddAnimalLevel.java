@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
+import MainEngine.LevelManager;
 import ParserEngine.XMLManager;
 import UIEngine.UIButton;
 import UIEngine.UILambda;
@@ -25,7 +26,6 @@ public class AddAnimalLevel extends ALevel {
 
 	public AddAnimalLevel(String _name) {
 		super(_name);
-		
 		gifSectionPoint = new Point(550 , 50);
 		classificationSectionPoint = new Point(50, 300);
 		caracteristiqueSectionPoint = new Point(550, 300);
@@ -33,8 +33,11 @@ public class AddAnimalLevel extends ALevel {
 		addSectionPoint = new Point(1100, 600);
 		nomSectionPoint = new Point(50, 50);
 		errorSectionPoint = new Point(650, 650);
-		
-		
+	}
+
+	@Override
+	public void OnBegin(Object... params) throws Exception {
+		// TODO Auto-generated method stub
 		// Section Nom
 		nomInputBox = new UIInputBox(new Rectangle(nomSectionPoint.x + 170, nomSectionPoint.y - 20, 160, 30), "");
 		
@@ -125,13 +128,9 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Section Ajout
 		
-		addButton = new UIButton(new Rectangle(addSectionPoint.x, addSectionPoint.y, 100, 50), "Ajouter", () -> {AddAnimalToXmlFile();}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-	}
-
-	@Override
-	public void OnBegin(Object... params) throws Exception {
-		// TODO Auto-generated method stub
-		
+		addButton = new UIButton(new Rectangle(addSectionPoint.x, addSectionPoint.y, 100, 50), "Ajouter", () -> {
+			AddAnimalToXmlFile();
+		}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 	}
 
 	@Override
@@ -398,6 +397,7 @@ public class AddAnimalLevel extends ALevel {
 		xmlManagerInstance.WriteToFile(animauxXML, "./Assets/XML/animaux.xml");
 		
 		//Retour au menu
+		LevelManager.GetInstance().SetLevel("Animal List Level");
 	}
 	
 	private final Point gifSectionPoint;

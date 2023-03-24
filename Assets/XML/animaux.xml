@@ -1,57 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
-    <animal name="Vache">
-                
+    <animal nom="Vache">
         <gif src="./Assets/GIF/vache.gif"/>
-                
         <classification>
-                        
             <embranchement>Chordés</embranchement>
-                        
             <classe>Mammifères</classe>
-                        
             <ordre>Artodactyla</ordre>
-                        
             <famille>Bovidés</famille>
-                        
             <genre>Bos</genre>
-                        
             <nom_scientifique>Bos taurus</nom_scientifique>
-                    
         </classification>
-                
         <localisations>
-                    	
             <localisation>Afrique</localisation>
-                        
             <localisation>Asie</localisation>
-                    	
             <localisation>Europe</localisation>
-                        
             <localisation>Amérique</localisation>
-                    	
             <localisation>Océanie</localisation>
-                    
         </localisations>
-                
         <caracteristique>
-                        
             <longueur_max unite="m">1.8</longueur_max>
-                        
             <poids_max unite="kg">800</poids_max>
-                        
             <longevite_max unite="années">20</longevite_max>
-                        
             <type_peau>cuir</type_peau>
-                        
             <regime>Herbivore</regime>
-                        
             <vitesse_max unite="km/h">5</vitesse_max>
-                    
         </caracteristique>
-            
     </animal>
-    
-    <animal name="Vache">
+    <animal nom="Vache">
         <gif src="./Assets/GIF/vache.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -76,7 +50,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-    <animal name="Vache">
+    <animal nom="Vache">
         <gif src="./Assets/GIF/vache.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -97,7 +71,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-    <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -118,7 +92,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-    <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -139,7 +113,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-    <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -160,7 +134,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-     <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -181,7 +155,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-     <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -202,7 +176,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-     <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -223,7 +197,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-     <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -244,7 +218,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-     <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -265,7 +239,7 @@
         </localisations>
         <caracteristique/>
     </animal>
- <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -286,7 +260,7 @@
         </localisations>
         <caracteristique/>
     </animal>
- <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -307,7 +281,7 @@
         </localisations>
         <caracteristique/>
     </animal>
- <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -328,7 +302,7 @@
         </localisations>
         <caracteristique/>
     </animal>
- <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -349,7 +323,7 @@
         </localisations>
         <caracteristique/>
     </animal>
- <animal name="Chat">
+    <animal nom="Chat">
         <gif src="./Assets/GIF/cat-standing.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -370,7 +344,7 @@
         </localisations>
         <caracteristique/>
     </animal>
-    <animal name="Humain">
+    <animal nom="Humain">
         <gif src="./Assets/GIF/gigachad-chad.gif"/>
         <classification>
             <embranchement>fhhgfdghyh</embranchement>
@@ -390,5 +364,257 @@
             <localisation/>
         </localisations>
         <caracteristique/>
+    </animal>
+    <animal nom="Koala">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>Je sais pas</embranchement>
+            <classe>???</classe>
+            <ordre>Inconnu</ordre>
+            <famille>Inconnue</famille>
+            <genre/>
+            <nom_scientifique>Koalass</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Amérique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">35</longueur_max>
+            <poids_max unite="g">450</poids_max>
+            <longevite_max unite="jours">35</longevite_max>
+            <type_peau>Chad</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="m/s">15</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="Tigre">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>djfklsdjkfk</embranchement>
+            <classe>sdfq</classe>
+            <ordre>qsdfq</ordre>
+            <famille>qsdfqq</famille>
+            <genre/>
+            <nom_scientifique>qsddfqsd</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1242</longueur_max>
+            <poids_max unite="t">41</poids_max>
+            <longevite_max unite="ann�es">1242</longevite_max>
+            <type_peau>dsqjkfhjqkjl</type_peau>
+            <regime>qsdfqsdf</regime>
+            <vitesse_max unite="km/h">10</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="Tigre">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>djfklsdjkfk</embranchement>
+            <classe>sdfq</classe>
+            <ordre>qsdfq</ordre>
+            <famille>qsdfqq</famille>
+            <genre/>
+            <nom_scientifique>qsddfqsd</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1242</longueur_max>
+            <poids_max unite="t">41</poids_max>
+            <longevite_max unite="ann�es">1242</longevite_max>
+            <type_peau>dsqjkfhjqkjl</type_peau>
+            <regime>qsdfqsdf</regime>
+            <vitesse_max unite="km/h">10</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="sdfqsd">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>qsdfqq</embranchement>
+            <classe>qsdfq</classe>
+            <ordre>qsdfq</ordre>
+            <famille>qsdf</famille>
+            <genre/>
+            <nom_scientifique>qsdfq</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">4445</longueur_max>
+            <poids_max unite="t">454</poids_max>
+            <longevite_max unite="ann�es">4445</longevite_max>
+            <type_peau>qfqqsdfqs</type_peau>
+            <regime>qsdfq</regime>
+            <vitesse_max unite="km/h">4154</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="dsfqds">
+        <gif src="./Assets/GIF/vache.gif"/>
+        <classification>
+            <embranchement>qsdfq</embranchement>
+            <classe>qsdfq</classe>
+            <ordre>qsdfq</ordre>
+            <famille>qsdfq</famille>
+            <genre/>
+            <nom_scientifique>qsdfqs</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">212</longueur_max>
+            <poids_max unite="t">454</poids_max>
+            <longevite_max unite="ann�es">212</longevite_max>
+            <type_peau>45412</type_peau>
+            <regime>4545</regime>
+            <vitesse_max unite="km/h">1247</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="fqdfqd">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>dfsqdfqd</embranchement>
+            <classe>sfqsdf</classe>
+            <ordre>qsdf</ordre>
+            <famille>qsdfqsdf</famille>
+            <genre/>
+            <nom_scientifique>qsdfqsd</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Amérique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">43213</longueur_max>
+            <poids_max unite="t">545</poids_max>
+            <longevite_max unite="ann�es">43213</longevite_max>
+            <type_peau>fg</type_peau>
+            <regime>dsfqsdfq</regime>
+            <vitesse_max unite="km/h">445</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="qsdfqsdfq">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>4454</embranchement>
+            <classe>4545</classe>
+            <ordre>4454</ordre>
+            <famille>54545</famille>
+            <genre/>
+            <nom_scientifique>45454554</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">54545</longueur_max>
+            <poids_max unite="t">5454</poids_max>
+            <longevite_max unite="ann�es">54545</longevite_max>
+            <type_peau>454545</type_peau>
+            <regime>454545</regime>
+            <vitesse_max unite="km/h">454</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="dqsfqsdfq">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>qdsfqsd</embranchement>
+            <classe>sdfqsdf</classe>
+            <ordre>dsqfdqsf</ordre>
+            <famille>qsdfqsdfq</famille>
+            <genre/>
+            <nom_scientifique>qsdfqdsfq</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">5454</longueur_max>
+            <poids_max unite="t">545</poids_max>
+            <longevite_max unite="ann�es">5454</longevite_max>
+            <type_peau>5454</type_peau>
+            <regime>545</regime>
+            <vitesse_max unite="km/h">4545</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="qsdfqsd">
+        <gif src="./Assets/GIF/cat-standing.gif"/>
+        <classification>
+            <embranchement>qsdfqdsf</embranchement>
+            <classe>qsdf</classe>
+            <ordre>fqsdfqsd</ordre>
+            <famille>fqsdfqsdf</famille>
+            <genre/>
+            <nom_scientifique>qdfqdsfqs</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">4545</longueur_max>
+            <poids_max unite="t">45</poids_max>
+            <longevite_max unite="ann�es">4545</longevite_max>
+            <type_peau>45</type_peau>
+            <regime>45</regime>
+            <vitesse_max unite="km/h">45</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="dqsfqs">
+        <gif src="./Assets/GIF/vache.gif"/>
+        <classification>
+            <embranchement>qdsfq</embranchement>
+            <classe>qsdfq</classe>
+            <ordre>qsdfqds</ordre>
+            <famille>qsdfqsdfq</famille>
+            <genre/>
+            <nom_scientifique>qsdfqsd</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Asie</localisation>
+            <localisation>Antarctique</localisation>
+            <localisation>Amérique</localisation>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">45</longueur_max>
+            <poids_max unite="t">45</poids_max>
+            <longevite_max unite="ann�es">45</longevite_max>
+            <type_peau>45</type_peau>
+            <regime>45</regime>
+            <vitesse_max unite="km/h">45</vitesse_max>
+        </caracteristique>
+    </animal>
+    <animal nom="qsdfqsd">
+        <gif src="./Assets/GIF/gigachad-chad.gif"/>
+        <classification>
+            <embranchement>qsdfqsdfq</embranchement>
+            <classe>fqsdf</classe>
+            <ordre>qdfqsdf</ordre>
+            <famille>qdfqsd</famille>
+            <genre/>
+            <nom_scientifique>sdqfqsdf</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Antarctique</localisation>
+            <localisation>Amérique</localisation>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">452</longueur_max>
+            <poids_max unite="t">7852</poids_max>
+            <longevite_max unite="ann�es">452</longevite_max>
+            <type_peau>4542</type_peau>
+            <regime>454512</regime>
+            <vitesse_max unite="km/h">4754</vitesse_max>
+        </caracteristique>
     </animal>
 </animaux>

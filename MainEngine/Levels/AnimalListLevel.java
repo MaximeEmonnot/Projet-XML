@@ -22,26 +22,35 @@ public class AnimalListLevel extends ALevel {
     public AnimalListLevel(String _name) throws Exception {
         super(_name);
 
-        addNewAnimal = new UIButton(new Rectangle(925, 595, 250, 75), "Add new animal", 
+        addNewAnimal = new UIButton(new Rectangle(925, 590, 250, 75), "Add new animal", 
         () -> { LevelManager.GetInstance().SetLevel("Add Animal Level"); }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
     }
 
     @Override
     public void OnBegin(Object... params) throws Exception {
        cards.clear();
+       pageIndex = 0;
 
-       NodeList result = XMLManager.GetInstance().SimpleQuery("Assets/XML/animaux.xml", "//animal");
+       NodeList result = XMLManager.GetInstance().GetDocument("Assets/XML/animaux.xml").getElementsByTagName("animal");
        
        for (int i = 0; i < result.getLength(); i++){
             Node node = result.item(i);
             // Récupération du nom
-            String name = node.getAttributes().getNamedItem("name").getTextContent();
+            String name = node.getAttributes().getNamedItem("nom").getTextContent();
 
             // Récupération du GIF
-            String gifPath = node.getChildNodes().item(1).getAttributes().getNamedItem("src").getTextContent();
+            NodeList childNodes = node.getChildNodes();
+            String gifPath = "";
+            for (int j = 0; j < childNodes.getLength(); j++){
+                Node child = childNodes.item(j);
+                if (child.getNodeName().equals("gif")){
+                    gifPath = child.getAttributes().getNamedItem("src").getTextContent();
+                    break;
+                }
+            }
 
-            cards.add(new UICard(new Rectangle(0, 0, 250, 250), name, gifPath, () -> { System.out.println(name);},
-             Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY));
+            cards.add(new UICard(new Rectangle(0, 0, 250, 250), name, gifPath, () -> { LevelManager.GetInstance().SetLevel("Animal Details Level", node);},
+            Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY));
        }
     }
 

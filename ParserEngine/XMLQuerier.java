@@ -15,7 +15,8 @@ public class XMLQuerier {
     public XMLQuerier(){}
 
     public NodeList SimpleQuery(Document document, String expression) throws Exception {
-       return (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        return (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
     }
 
     public XQResultSequence ComplexQuery(Document document, String query) throws Exception {
@@ -24,6 +25,4 @@ public class XMLQuerier {
         XQPreparedExpression expr = conn.prepareExpression(query);
         return expr.executeQuery();
     }
-
-    private static XPath xPath = XPathFactory.newInstance().newXPath();
 }
