@@ -3,7 +3,7 @@
     <xs:element name="animaux">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="animal">
+                <xs:element name="animal" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="gif">

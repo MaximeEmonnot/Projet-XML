@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
-        
+<?xml version="1.0" encoding="UTF-8"?><animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
     <animal nom="Vache">
                 
         <gif src="/Assets.GIF/vache.gif"/>
@@ -70,7 +68,15 @@
             <vitesse_max/>
         </classification>
         <localisations>
+<<<<<<< HEAD
             <localisation/>
+=======
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique</localisation>
+            <localisation>Océanie</localisation>
+>>>>>>> 0ade4550878de0f99f146f8bda893a7d15e707eb
         </localisations>
         <caracteristique/>
     </animal>

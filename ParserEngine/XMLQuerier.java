@@ -18,7 +18,7 @@ public class XMLQuerier {
        return (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
     }
 
-    public XQSequence ComplexQuery(Document document, String query) throws Exception {
+    public XQResultSequence ComplexQuery(Document document, String query) throws Exception {
         OXQDataSource ds = new OXQDataSource();
         XQConnection conn = ds.getConnection();
         XQPreparedExpression expr = conn.prepareExpression(query);
