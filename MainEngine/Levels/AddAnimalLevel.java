@@ -199,7 +199,7 @@ public class AddAnimalLevel extends ALevel {
 
 	@Override
 	public void Draw() throws Exception {
-		GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
+		GraphicsSystem.GetInstance().SetBackgroundColor(Color.LIGHT_GRAY);
 		
 		// Section Nom
 		GraphicsSystem.GetInstance().DrawText("Nom:", nomSectionPoint, Color.BLACK);

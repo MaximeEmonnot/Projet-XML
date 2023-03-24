@@ -3,6 +3,8 @@ package ParserEngine;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.xml.xquery.XQResultSequence;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
@@ -39,6 +41,13 @@ public class XMLManager {
     }
     public NodeList SimpleQuery(Document document, String expression) throws Exception {
         return xmlQuerier.SimpleQuery(document, expression);
+    }
+
+    public XQResultSequence ComplexQuery(String path, String expression) throws Exception {
+        return ComplexQuery(GetDocument(path), expression);
+    }
+    public XQResultSequence ComplexQuery(Document document, String expression) throws Exception {
+        return xmlQuerier.ComplexQuery(document, expression);
     }
 
     public void TransformDocument(String documentPath, String xsltPath, String outputPath) throws Exception{

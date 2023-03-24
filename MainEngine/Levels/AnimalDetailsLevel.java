@@ -137,8 +137,10 @@ public class AnimalDetailsLevel extends ALevel {
 
     @Override
     public void Draw() {
-        GraphicsSystem.GetInstance().SetBackgroundColor(Color.MAGENTA);
+        GraphicsSystem.GetInstance().SetBackgroundColor(Color.LIGHT_GRAY);
         
+        // GIF
+        GraphicsSystem.GetInstance().DrawRect(new Rectangle(100, 50, 250, 250), Color.BLACK, false, 6);
         GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite(gifPath), new Rectangle(100, 50, 250, 250), 5);
         
         // Section Nom

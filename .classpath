@@ -6,62 +6,62 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/ant.jar">
+	<classpathentry kind="lib" path="./lib/ant.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/ant-launcher.jar">
+	<classpathentry kind="lib" path="./lib/ant-launcher.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/apache-xmlbeans.jar">
+	<classpathentry kind="lib" path="./lib/apache-xmlbeans.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/oxh.jar">
+	<classpathentry kind="lib" path="./lib/oxh.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/oxh-core.jar">
+	<classpathentry kind="lib" path="./lib/oxh-core.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/oxh-hive.jar">
+	<classpathentry kind="lib" path="./lib/oxh-hive.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/oxh-mapreduce.jar">
+	<classpathentry kind="lib" path="./lib/oxh-mapreduce.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/oxquery.jar">
+	<classpathentry kind="lib" path="./lib/oxquery.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/stax2-api-4.2.jar">
+	<classpathentry kind="lib" path="./lib/stax2-api-4.2.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/woodstox-core-6.0.3.jar">
+	<classpathentry kind="lib" path="./lib/woodstox-core-6.0.3.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/xmlparserv2_sans_jaxp_services.jar">
+	<classpathentry kind="lib" path="./lib/xmlparserv2_sans_jaxp_services.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Benjamin/git/Projet-XML/lib/xqjapi.jar">
+	<classpathentry kind="lib" path="./lib/xqjapi.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
