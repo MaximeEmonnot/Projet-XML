@@ -168,7 +168,8 @@ public class AnimalDetailsLevel extends ALevel {
             Point pointLoc = new Point();
             switch(location){
                 case "Afrique": pointLoc = new Point(235, 465); break;
-                case "Amérique": pointLoc = new Point(162, 460); break;
+                case "Amérique du Nord": pointLoc = new Point(182, 428); break;
+                case "Amérique du Sud": pointLoc = new Point(182, 477); break;
                 case "Antarctique": pointLoc = new Point(230, 550); break;
                 case "Asie": pointLoc = new Point(290, 425); break;
                 case "Europe": pointLoc = new Point(230, 435); break;
