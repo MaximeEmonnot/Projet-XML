@@ -1,8 +1,5 @@
 package ParserEngine;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.xml.xquery.XQResultSequence;
 
 import org.w3c.dom.Document;
