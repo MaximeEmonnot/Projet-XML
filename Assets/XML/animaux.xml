@@ -530,4 +530,255 @@
         </caracteristique>
     </animal>
 
+    <animal nom="Koala">
+        <gif src="./Assets/GIF/koala.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Diprotodontia</ordre>
+            <famille>Phascolarctidés</famille>
+            <genre>Phascolarctos</genre>
+            <nom_scientifique>Phascolarctos cinereus</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">85</longueur_max>
+            <poids_max unite="kg">8</poids_max>
+            <longevite_max unite="années">14</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">32</vitesse_max>
+            <cri src="./Assets/Sounds/koala.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Kangourou">
+        <gif src="./Assets/GIF/kangaroo.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Diprotodontia</ordre>
+            <famille>Macropodidés</famille>
+            <genre>Macropus</genre>
+            <nom_scientifique>Macropus fuliginosus</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.8</longueur_max>
+            <poids_max unite="kg">90</poids_max>
+            <longevite_max unite="années">8</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">56</vitesse_max>
+            <cri src="./Assets/Sounds/kangaroo.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Panda">
+        <gif src="./Assets/GIF/panda.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Carnivora</ordre>
+            <famille>Ursidés</famille>
+            <genre>Ailuropoda</genre>
+            <nom_scientifique>Ailuropoda melanoleuca</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.8</longueur_max>
+            <poids_max unite="kg">150</poids_max>
+            <longevite_max unite="années">20</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">20</vitesse_max>
+            <cri src="./Assets/Sounds/panda.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Chauve-souris commune">
+        <gif src="./Assets/GIF/bat.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Chiroptera</ordre>
+            <famille>Vespertilionidés</famille>
+            <genre>Myotis</genre>
+            <nom_scientifique>Myotis myotis</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Asie</localisation>
+            <localisation>Afrique</localisation>
+            <localisation>Europe</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">10</longueur_max>
+            <poids_max unite="g">35</poids_max>
+            <longevite_max unite="années">10</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Insectivore</regime>
+            <vitesse_max unite="km/h">40</vitesse_max>
+            <cri src="./Assets/Sounds/bat.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Castor">
+        <gif src="./Assets/GIF/beaver.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Rodentia</ordre>
+            <famille>Castoridés</famille>
+            <genre>Castor</genre>
+            <nom_scientifique>Castor fiber</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">120</longueur_max>
+            <poids_max unite="kg">35</poids_max>
+            <longevite_max unite="années">15</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">5</vitesse_max>
+            <cri src="./Assets/Sounds/beaver.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Hippopotame">
+        <gif src="./Assets/GIF/hippo.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Artiodactyla</ordre>
+            <famille>Hippopotamidés</famille>
+            <genre>Hippopotamus</genre>
+            <nom_scientifique>Hippopotamus amphibius</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">4.5</longueur_max>
+            <poids_max unite="t">3.5</poids_max>
+            <longevite_max unite="années">50</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">8</vitesse_max>
+            <cri src="./Assets/Sounds/hippo.wav"/>
+        </caracteristique>
+    </animal>
+
+     <animal nom="Poule">
+        <gif src="./Assets/GIF/chicken.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Oiseaux</classe>
+            <ordre>Galliformes</ordre>
+            <famille>Phasianidés</famille>
+            <genre>Gallus</genre>
+            <nom_scientifique>Gallus gallus domesticus</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">50</longueur_max>
+            <poids_max unite="kg">4</poids_max>
+            <longevite_max unite="années">10</longevite_max>
+            <type_peau>Plumes</type_peau>
+            <regime>Omnivore</regime>
+            <vitesse_max unite="km/h">5</vitesse_max>
+            <cri src="./Assets/Sounds/chicken.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Manchot empereur">
+        <gif src="./Assets/GIF/penguin.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Oiseaux</classe>
+            <ordre>Sphenisciformes</ordre>
+            <famille>Spheniscidés</famille>
+            <genre>Aptenodytes</genre>
+            <nom_scientifique>Aptenodytes forsteri</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">100</longueur_max>
+            <poids_max unite="kg">40</poids_max>
+            <longevite_max unite="années">20</longevite_max>
+            <type_peau>Plumes</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">8</vitesse_max>
+            <cri src="./Assets/Sounds/penguin.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Grenouille commune">
+        <gif src="./Assets/GIF/frog.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Amphibiens</classe>
+            <ordre>Anura</ordre>
+            <famille>Ranidés</famille>
+            <genre>Rana</genre>
+            <nom_scientifique>Rana temporaria</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Europe</localisation>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">13</longueur_max>
+            <poids_max unite="g">35</poids_max>
+            <longevite_max unite="années">10</longevite_max>
+            <type_peau>Mucus</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">12</vitesse_max>
+            <cri src="./Assets/Sounds/frog.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Lapin">
+        <gif src="./Assets/GIF/rabbit.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Lagomorpha</ordre>
+            <famille>Leporidés</famille>
+            <genre>Oryctolagus</genre>
+            <nom_scientifique>Oryctolagus cuniculus</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Europe</localisation>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">50</longueur_max>
+            <poids_max unite="kg">2</poids_max>
+            <longevite_max unite="années">15</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">55</vitesse_max>
+            <cri src="./Assets/Sounds/rabbit.wav"/>
+        </caracteristique>
+    </animal>
+
 </animaux>

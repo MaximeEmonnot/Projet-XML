@@ -30,6 +30,8 @@ public class AnimalDetailsLevel extends ALevel {
 
     @Override
     public void OnBegin(Object... params) {
+        locations.clear();
+
         Node animal = (Node)params[0];
         name = animal.getAttributes().getNamedItem("nom").getTextContent();
         NodeList animalInfos = animal.getChildNodes();
