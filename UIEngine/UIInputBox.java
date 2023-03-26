@@ -3,6 +3,7 @@ import java.awt.*;
 
 import CoreEngine.Keyboard;
 import CoreEngine.Mouse;
+import CoreEngine.Timer;
 import GraphicsEngine.GraphicsSystem;
 
 public class UIInputBox {
@@ -17,11 +18,10 @@ public class UIInputBox {
             bIsFocused = rect.contains(Mouse.GetInstance().GetMousePos());
 
         if (bIsFocused){
-            char c = Keyboard.GetInstance().ReadChar();
-            if (authorizedChar.isEmpty() && defaultAuthorizedChar.contains(Character.toString(c)) && text.length() < maximalSize) text += c;
-            else if (!authorizedChar.isEmpty() && authorizedChar.contains(Character.toString(c)) && text.length() < maximalSize) text += c;
-            else if (c == 8 && !text.isEmpty()) text = text.substring(0, text.length() - 1);
+            IndicatorRoutine();
+            ReadRoutine();
         }
+        else text = text.replace("|", "");
     }
 
     public void Draw(){
@@ -57,7 +57,7 @@ public class UIInputBox {
     }
 
     public String GetText() {
-        return text;
+        return text.replace("|","");
     }
 
     public void SetText(String _text){
@@ -67,6 +67,26 @@ public class UIInputBox {
     public void SetDescription(String newDescription){
         description = newDescription;
     }
+
+    private void IndicatorRoutine() {
+        currentTimer += Timer.GetInstance().DeltaTime();
+        if (currentTimer > timer){
+            if (text.endsWith("|")) text = text.replace("|", "");
+            else text += "|";
+            currentTimer = 0.f;
+        }
+    }
+
+    private void ReadRoutine() {
+        char c = Keyboard.GetInstance().ReadChar();
+        if (c != 0) {
+            text = text.replace("|", "");
+            currentTimer = 0.f;
+        }
+        if (authorizedChar.isEmpty() && defaultAuthorizedChar.contains(Character.toString(c)) && text.length() < maximalSize) text += c;
+        else if (!authorizedChar.isEmpty() && authorizedChar.contains(Character.toString(c)) && text.length() < maximalSize) text += c;
+        else if (c == 8 && !text.isEmpty()) text = text.substring(0, text.length() - 1);
+    }
     
     private Rectangle rect;
     private String description;
@@ -74,7 +94,9 @@ public class UIInputBox {
     private boolean bIsFocused = false;
     private String authorizedChar = "";
     private int maximalSize = Integer.MAX_VALUE;
-    private final static String defaultAuthorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"�+-*@&������{([|])}=_><%$�#~ ";
+    private final static String defaultAuthorizedChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!,;.:/\\\'\"°+-*@&éèêàùç²{([|])}=_><%$€#~ ";
     private final static int FONTSIZE = 16;
     
+    private final float timer = 0.75f;
+    private float currentTimer = 0.0f; 
 }
