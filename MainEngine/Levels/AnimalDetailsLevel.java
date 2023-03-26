@@ -21,8 +21,11 @@ public class AnimalDetailsLevel extends ALevel {
         backButton = new UIButton(new Rectangle(100, 590, 250, 75), "Back to list", 
         () -> {LevelManager.GetInstance().SetLevel("Animal List Level");}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
-        playShout = new UIButton(new Rectangle(390, 515, 150, 40), "Cri",
+        playShout = new UIButton(new Rectangle(410, 515, 350, 40), "Play shout",
         () -> {}, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
+
+        stopShout = new UIButton(new Rectangle(785, 515, 350, 40), "Stop shout",
+        () -> { AudioManager.GetInstance().StopSound(); }, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
     }
 
     @Override
@@ -133,6 +136,7 @@ public class AnimalDetailsLevel extends ALevel {
     public void Update() throws Exception {
         backButton.Update();
         playShout.Update();
+        stopShout.Update();
     }
 
     @Override
@@ -168,7 +172,7 @@ public class AnimalDetailsLevel extends ALevel {
             Point pointLoc = new Point();
             switch(location){
                 case "Afrique": pointLoc = new Point(235, 465); break;
-                case "Amérique du Nord": pointLoc = new Point(182, 428); break;
+                case "Amérique du Nord": pointLoc = new Point(150, 439); break;
                 case "Amérique du Sud": pointLoc = new Point(182, 477); break;
                 case "Antarctique": pointLoc = new Point(230, 550); break;
                 case "Asie": pointLoc = new Point(290, 425); break;
@@ -191,6 +195,7 @@ public class AnimalDetailsLevel extends ALevel {
         GraphicsSystem.GetInstance().DrawText("Régime : " + regime, new Point(800, 450), Color.BLACK, 7);
         GraphicsSystem.GetInstance().DrawText("Vitesse : " + vitesse, new Point(800, 495), Color.BLACK, 7);
         playShout.Draw(10);
+        stopShout.Draw(10);
 
         backButton.Draw(10);
     }
@@ -212,4 +217,5 @@ public class AnimalDetailsLevel extends ALevel {
     private String regime;
     private String vitesse;
     private UIButton playShout;
+    private UIButton stopShout;
 }
