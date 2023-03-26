@@ -28,9 +28,11 @@ public class AudioManager {
     }
 
     public void StopSound() throws Exception {
-        audio.close();
-        clip.close();
-        clip.stop();
+        if (audio != null && clip != null){
+            audio.close();
+            clip.close();
+            clip.stop();
+        }
     }
 
     private static AudioManager instance = null;
