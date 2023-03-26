@@ -24,7 +24,7 @@
             <longevite_max unite="années">15</longevite_max>
             <type_peau>cuir</type_peau>
             <regime>Carnivore</regime>
-            <vitesse_max unite="km/h">70</vitesse_max>
+            <vitesse_max unite="km/h">58</vitesse_max>
             <cri src="./Assets/Sounds/cat.wav"/>
         </caracteristique>
     </animal>
@@ -62,7 +62,7 @@
         <classification>
             <embranchement>Chordés</embranchement>
             <classe>Mammifères</classe>
-            <ordre>Artodactyla</ordre>
+            <ordre>Artiodactyla</ordre>
             <famille>Bovidés</famille>
             <genre>Bos</genre>
             <nom_scientifique>Bos taurus</nom_scientifique>
@@ -105,7 +105,7 @@
             <localisation>Océanie</localisation>
         </localisations>
         <caracteristique>
-            <longueur_max unite="m">1.80</longueur_max>
+            <longueur_max unite="m">1.8</longueur_max>
             <poids_max unite="kg">150</poids_max>
             <longevite_max unite="années">25</longevite_max>
             <type_peau>cuir</type_peau>
@@ -114,4 +114,420 @@
             <cri src="./Assets/Sounds/pig.wav"/>
         </caracteristique>
     </animal>
+
+    <animal nom="Mouton">
+        <gif src="./Assets/GIF/sheep.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Artiodactyla</ordre>
+            <famille>Bovidés</famille>
+            <genre>Ovis</genre>
+            <nom_scientifique>Ovis aries</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.5</longueur_max>
+            <poids_max unite="kg">100</poids_max>
+            <longevite_max unite="années">12</longevite_max>
+            <type_peau>cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">36</vitesse_max>
+            <cri src="./Assets/Sounds/sheep.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Cheval">
+        <gif src="./Assets/GIF/horse.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Perissodactyla</ordre>
+            <famille>Equidés</famille>
+            <genre>Equus</genre>
+            <nom_scientifique>Equus caballus</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">2.19</longueur_max>
+            <poids_max unite="kg">1500</poids_max>
+            <longevite_max unite="années">30</longevite_max>
+            <type_peau>cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">60</vitesse_max>
+            <cri src="./Assets/Sounds/horse.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Humain">
+        <gif src="./Assets/GIF/human.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Primates</ordre>
+            <famille>Hominidés</famille>
+            <genre>Homo</genre>
+            <nom_scientifique>Homo sapiens</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+            <localisation>Antarctique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.8</longueur_max>
+            <poids_max unite="kg">80</poids_max>
+            <longevite_max unite="années">80</longevite_max>
+            <type_peau>cuir</type_peau>
+            <regime>Omnivore</regime>
+            <vitesse_max unite="km/h">40</vitesse_max>
+            <cri src="./Assets/Sounds/human.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Chimpanzé">
+        <gif src="./Assets/GIF/chimpanzee.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Primates</ordre>
+            <famille>Hominidés</famille>
+            <genre>Pan</genre>
+            <nom_scientifique>Pan</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.6</longueur_max>
+            <poids_max unite="kg">60</poids_max>
+            <longevite_max unite="années">45</longevite_max>
+            <type_peau>cuir</type_peau>
+            <regime>Omnivore</regime>
+            <vitesse_max unite="km/h">40</vitesse_max>
+            <cri src="./Assets/Sounds/chimpanzee.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Crotale">
+        <gif src="./Assets/GIF/snake.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Reptiles</classe>
+            <ordre>Squamates</ordre>
+            <famille>Viperidés</famille>
+            <genre>Crotalus</genre>
+            <nom_scientifique>Crotalus atrox</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">120</longueur_max>
+            <poids_max unite="kg">2.7</poids_max>
+            <longevite_max unite="années">30</longevite_max>
+            <type_peau>Ecailles</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">3</vitesse_max>
+            <cri src="./Assets/Sounds/snake.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Chèvre">
+        <gif src="./Assets/GIF/goat.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Artiodactyla</ordre>
+            <famille>Bovidés</famille>
+            <genre>Capra</genre>
+            <nom_scientifique>Capra aegagrus hircus</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">1.8</longueur_max>
+            <poids_max unite="kg">90</poids_max>
+            <longevite_max unite="années">18</longevite_max>
+            <type_peau>cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">24</vitesse_max>
+            <cri src="./Assets/Sounds/goat.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Pigeon">
+        <gif src="./Assets/GIF/pigeon.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Oiseaux</classe>
+            <ordre>Columbiformes</ordre>
+            <famille>Colombidés</famille>
+            <genre>Columba</genre>
+            <nom_scientifique>Columba livia</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">30</longueur_max>
+            <poids_max unite="g">500</poids_max>
+            <longevite_max unite="années">5</longevite_max>
+            <type_peau>Plumes</type_peau>
+            <regime>Granivores</regime>
+            <vitesse_max unite="km/h">50</vitesse_max>
+            <cri src="./Assets/Sounds/pigeon.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Corbeau">
+        <gif src="./Assets/GIF/raven.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Oiseaux</classe>
+            <ordre>Passeriformes</ordre>
+            <famille>Corvidés</famille>
+            <genre>Corvus</genre>
+            <nom_scientifique>Corvus corax</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+            <localisation>Asie</localisation>
+            <localisation>Europe</localisation>
+            <localisation>Amérique du Nord</localisation>
+            <localisation>Amérique du Sud</localisation>
+            <localisation>Océanie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">69</longueur_max>
+            <poids_max unite="kg">1.4</poids_max>
+            <longevite_max unite="années">15</longevite_max>
+            <type_peau>Plumes</type_peau>
+            <regime>Omnivore</regime>
+            <vitesse_max unite="km/h">60</vitesse_max>
+            <cri src="./Assets/Sounds/raven.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Ara bleu">
+        <gif src="./Assets/GIF/ara.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Oiseaux</classe>
+            <ordre>Psittaciformes</ordre>
+            <famille>Psittacidés</famille>
+            <genre>Anodorhynchus</genre>
+            <nom_scientifique>Anodorhynchus hyacinthinus</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Amérique du Sud</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="cm">100</longueur_max>
+            <poids_max unite="kg">1.7</poids_max>
+            <longevite_max unite="années">60</longevite_max>
+            <type_peau>Plumes</type_peau>
+            <regime>Omnivore</regime>
+            <vitesse_max unite="km/h">45</vitesse_max>
+            <cri src="./Assets/Sounds/ara.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Baleine bleue">
+        <gif src="./Assets/GIF/whale.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Cetacea</ordre>
+            <famille>Balénopteridés</famille>
+            <genre>Balaenoptera</genre>
+            <nom_scientifique>Balaenoptera musculus</nom_scientifique>
+        </classification>
+        <localisations>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">27</longueur_max>
+            <poids_max unite="t">120</poids_max>
+            <longevite_max unite="années">90</longevite_max>
+            <type_peau>Ecailles</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">30</vitesse_max>
+            <cri src="./Assets/Sounds/whale.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Dauphin">
+        <gif src="./Assets/GIF/dolphin.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Cetacea</ordre>
+            <famille>Delphinidés</famille>
+            <genre>Delphinus</genre>
+            <nom_scientifique>Delphinus delphis</nom_scientifique>
+        </classification>
+        <localisations>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">2.5</longueur_max>
+            <poids_max unite="kg">150</poids_max>
+            <longevite_max unite="années">30</longevite_max>
+            <type_peau>Ecailles</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">60</vitesse_max>
+            <cri src="./Assets/Sounds/dolphin.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Lion">
+        <gif src="./Assets/GIF/lion.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Carnivora</ordre>
+            <famille>Félidés</famille>
+            <genre>Panthera</genre>
+            <nom_scientifique>Panthera leo</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">2.5</longueur_max>
+            <poids_max unite="kg">190</poids_max>
+            <longevite_max unite="années">14</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">80</vitesse_max>
+            <cri src="./Assets/Sounds/lion.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Tigre">
+        <gif src="./Assets/GIF/tiger.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Carnivora</ordre>
+            <famille>Félidés</famille>
+            <genre>Panthera</genre>
+            <nom_scientifique>Panthera tigris</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">3.3</longueur_max>
+            <poids_max unite="kg">260</poids_max>
+            <longevite_max unite="années">15</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">65</vitesse_max>
+            <cri src="./Assets/Sounds/tiger.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Eléphant">
+        <gif src="./Assets/GIF/elephant.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Proboscidea</ordre>
+            <famille>Eléphantidés</famille>
+            <genre>Elephas</genre>
+            <nom_scientifique>Elephas maximus</nom_scientifique>
+        </classification>
+        <localisations>
+            <localisation>Asie</localisation>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">3.5</longueur_max>
+            <poids_max unite="t">5</poids_max>
+            <longevite_max unite="années">70</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">40</vitesse_max>
+            <cri src="./Assets/Sounds/elephant.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Girafe">
+        <gif src="./Assets/GIF/giraffe.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Mammifères</classe>
+            <ordre>Artiodactyla</ordre>
+            <famille>Giraffidés</famille>
+            <genre>Giraffa</genre>
+            <nom_scientifique>Giraffa camelopardalis</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Afrique</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">6</longueur_max>
+            <poids_max unite="kg">1930</poids_max>
+            <longevite_max unite="années">25</longevite_max>
+            <type_peau>Cuir</type_peau>
+            <regime>Herbivore</regime>
+            <vitesse_max unite="km/h">60</vitesse_max>
+            <cri src="./Assets/Sounds/giraffe.wav"/>
+        </caracteristique>
+    </animal>
+
+    <animal nom="Crocodile marin">
+        <gif src="./Assets/GIF/crocodile.gif"/>
+        <classification>
+            <embranchement>Chordés</embranchement>
+            <classe>Reptiles</classe>
+            <ordre>Crocodilia</ordre>
+            <famille>Crocodylidés</famille>
+            <genre>Crocodylus</genre>
+            <nom_scientifique>Crocodylus porosus</nom_scientifique>
+        </classification>
+        <localisations>>
+            <localisation>Asie</localisation>
+        </localisations>
+        <caracteristique>
+            <longueur_max unite="m">7</longueur_max>
+            <poids_max unite="kg">1000</poids_max>
+            <longevite_max unite="années">100</longevite_max>
+            <type_peau>Ecailles</type_peau>
+            <regime>Carnivore</regime>
+            <vitesse_max unite="km/h">32</vitesse_max>
+            <cri src="./Assets/Sounds/crocodile.wav"/>
+        </caracteristique>
+    </animal>
+
 </animaux>
