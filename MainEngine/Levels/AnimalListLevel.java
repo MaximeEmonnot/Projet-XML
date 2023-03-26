@@ -29,17 +29,22 @@ public class AnimalListLevel extends ALevel {
         next = new UIButton(new Rectangle(1190, 312, 50, 150), "↓",
         () -> { pageIndex++; }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
-        searchBox = new UIInputBox(new Rectangle(100, 590, 500, 75), "Type search command");
-        searchButton = new UIButton(new Rectangle(600, 590, 75, 75), "Search", 
+        searchBox = new UIInputBox(new Rectangle(100, 590, 450, 75), "Type search command");
+        searchButton = new UIButton(new Rectangle(550, 590, 75, 75), "Search", 
         () -> { 
             try{
-                InitializeListFromResult(XMLManager.GetInstance().ComplexQuery("Assets/XML/animaux.xml", searchBox.GetText()));
+                bHasSearchError = false;
+                InitializeListFromResult(XMLManager.GetInstance().SimpleQuery("Assets/XML/animaux.xml", searchBox.GetText()));
             }
             catch(Exception e){
                 bHasSearchError = true;
             }
         },
          Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+
+        transformHTML = new UIButton(new Rectangle(650, 590, 250, 75), "Get HTML View",
+        () -> {XMLManager.GetInstance().TransformDocument("Assets/XML/animaux.xml", "Assets/XML/animaux.xsl", "Assets/XML/animaux.html");}, 
+        Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
     }
 
     @Override
@@ -68,6 +73,7 @@ public class AnimalListLevel extends ALevel {
         addNewAnimal.Update();
         searchBox.Update();
         searchButton.Update();
+        transformHTML.Update();
     }
 
     @Override
@@ -82,15 +88,19 @@ public class AnimalListLevel extends ALevel {
         addNewAnimal.Draw(15);
         searchBox.Draw(15);
         searchButton.Draw(15);
+        transformHTML.Draw(15);
         
         GraphicsSystem.GetInstance().DrawRect(new Rectangle(1190, 590, 50, 50), Color.WHITE, true, 15);
         GraphicsSystem.GetInstance().DrawRect(new Rectangle(1190, 590, 50, 50), Color.BLACK, false, 15);
-        GraphicsSystem.GetInstance().DrawText(Integer.toString(pageIndex + 1) + " / " + Integer.toString((int)(cards.size() / 8) + 1), new Point(1200, 622), Color.BLACK, 15);
+        GraphicsSystem.GetInstance().DrawText(Integer.toString(pageIndex + 1) + " / " + Integer.toString((int)(cards.size() / 8) + (((cards.size() % 8) == 0) ? 0 : 1)), new Point(1200, 622), Color.BLACK, 15);
     
-        if (bHasSearchError) GraphicsSystem.GetInstance().DrawText("Error : Wrong syntax", new Point(690, 630), Color.RED, 15);
+        if (bHasSearchError) GraphicsSystem.GetInstance().DrawText("Error : Wrong syntax", new Point(145, 655), Color.RED, 15);
     }
 
     private void InitializeListFromResult(XQResultSequence result) throws Exception {
+
+        cards.clear();
+
         while (result.next()){
             Node node = result.getNode();
 
@@ -114,6 +124,8 @@ public class AnimalListLevel extends ALevel {
     }
 
     private void InitializeListFromResult(NodeList result){
+
+        cards.clear();
 
         for (int i = 0; i < result.getLength(); i++){
             Node node = result.item(i);
@@ -145,4 +157,6 @@ public class AnimalListLevel extends ALevel {
     private UIInputBox searchBox;
     private UIButton searchButton;
     private boolean bHasSearchError = false;
+
+    private UIButton transformHTML;
 }
