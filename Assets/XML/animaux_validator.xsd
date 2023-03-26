@@ -30,7 +30,7 @@
                             <xs:element name="localisations">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element type="continentType" name="localisation" maxOccurs="6" minOccurs="1"/>
+                                        <xs:element type="continentType" name="localisation" maxOccurs="7" minOccurs="0"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
@@ -98,6 +98,7 @@
     <xs:simpleType name="distanceUnit">
         <xs:restriction base="xs:string">
             <xs:enumeration value="m"/>
+            <xs:enumeration value="cm"/>
             <xs:enumeration value="mm"/>
         </xs:restriction>
     </xs:simpleType>
@@ -128,7 +129,8 @@
     <xs:simpleType name="continentType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Afrique"/>
-            <xs:enumeration value="Amérique"/>
+            <xs:enumeration value="Amérique du Nord"/>
+            <xs:enumeration value="Amérique du Sud"/>
             <xs:enumeration value="Antarctique"/>
             <xs:enumeration value="Asie"/>
             <xs:enumeration value="Europe"/>

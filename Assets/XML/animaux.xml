@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?><animaux xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="animaux_validator.xsd">
-    
     <animal nom="Chat">
         <gif src="./Assets/GIF/cat.gif"/>
         <classification>
@@ -56,7 +55,6 @@
             <cri src="./Assets/Sounds/dog.wav"/>
         </caracteristique>
     </animal>
-    
     <animal nom="Vache">
         <gif src="./Assets/GIF/cow.gif"/>
         <classification>
@@ -85,7 +83,6 @@
             <cri src="./Assets/Sounds/cow.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Cochon">
         <gif src="./Assets/GIF/pig.gif"/>
         <classification>
@@ -114,7 +111,6 @@
             <cri src="./Assets/Sounds/pig.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Mouton">
         <gif src="./Assets/GIF/sheep.gif"/>
         <classification>
@@ -143,7 +139,6 @@
             <cri src="./Assets/Sounds/sheep.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Cheval">
         <gif src="./Assets/GIF/horse.gif"/>
         <classification>
@@ -172,7 +167,6 @@
             <cri src="./Assets/Sounds/horse.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Humain">
         <gif src="./Assets/GIF/human.gif"/>
         <classification>
@@ -202,7 +196,6 @@
             <cri src="./Assets/Sounds/human.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Chimpanzé">
         <gif src="./Assets/GIF/chimpanzee.gif"/>
         <classification>
@@ -226,7 +219,6 @@
             <cri src="./Assets/Sounds/chimpanzee.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Crotale">
         <gif src="./Assets/GIF/snake.gif"/>
         <classification>
@@ -251,7 +243,6 @@
             <cri src="./Assets/Sounds/snake.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Chèvre">
         <gif src="./Assets/GIF/goat.gif"/>
         <classification>
@@ -280,7 +271,6 @@
             <cri src="./Assets/Sounds/goat.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Pigeon">
         <gif src="./Assets/GIF/pigeon.gif"/>
         <classification>
@@ -309,7 +299,6 @@
             <cri src="./Assets/Sounds/pigeon.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Corbeau">
         <gif src="./Assets/GIF/raven.gif"/>
         <classification>
@@ -338,7 +327,6 @@
             <cri src="./Assets/Sounds/raven.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Ara bleu">
         <gif src="./Assets/GIF/ara.gif"/>
         <classification>
@@ -362,7 +350,6 @@
             <cri src="./Assets/Sounds/ara.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Baleine bleue">
         <gif src="./Assets/GIF/whale.gif"/>
         <classification>
@@ -373,8 +360,7 @@
             <genre>Balaenoptera</genre>
             <nom_scientifique>Balaenoptera musculus</nom_scientifique>
         </classification>
-        <localisations>
-        </localisations>
+        <localisations/>
         <caracteristique>
             <longueur_max unite="m">27</longueur_max>
             <poids_max unite="t">120</poids_max>
@@ -385,7 +371,6 @@
             <cri src="./Assets/Sounds/whale.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Dauphin">
         <gif src="./Assets/GIF/dolphin.gif"/>
         <classification>
@@ -396,8 +381,7 @@
             <genre>Delphinus</genre>
             <nom_scientifique>Delphinus delphis</nom_scientifique>
         </classification>
-        <localisations>
-        </localisations>
+        <localisations/>
         <caracteristique>
             <longueur_max unite="m">2.5</longueur_max>
             <poids_max unite="kg">150</poids_max>
@@ -408,7 +392,6 @@
             <cri src="./Assets/Sounds/dolphin.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Lion">
         <gif src="./Assets/GIF/lion.gif"/>
         <classification>
@@ -432,7 +415,6 @@
             <cri src="./Assets/Sounds/lion.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Tigre">
         <gif src="./Assets/GIF/tiger.gif"/>
         <classification>
@@ -456,7 +438,6 @@
             <cri src="./Assets/Sounds/tiger.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Eléphant">
         <gif src="./Assets/GIF/elephant.gif"/>
         <classification>
@@ -481,7 +462,6 @@
             <cri src="./Assets/Sounds/elephant.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Girafe">
         <gif src="./Assets/GIF/giraffe.gif"/>
         <classification>
@@ -492,7 +472,7 @@
             <genre>Giraffa</genre>
             <nom_scientifique>Giraffa camelopardalis</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Afrique</localisation>
         </localisations>
         <caracteristique>
@@ -505,7 +485,6 @@
             <cri src="./Assets/Sounds/giraffe.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Crocodile marin">
         <gif src="./Assets/GIF/crocodile.gif"/>
         <classification>
@@ -516,7 +495,7 @@
             <genre>Crocodylus</genre>
             <nom_scientifique>Crocodylus porosus</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Asie</localisation>
         </localisations>
         <caracteristique>
@@ -529,7 +508,6 @@
             <cri src="./Assets/Sounds/crocodile.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Koala">
         <gif src="./Assets/GIF/koala.gif"/>
         <classification>
@@ -540,7 +518,7 @@
             <genre>Phascolarctos</genre>
             <nom_scientifique>Phascolarctos cinereus</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Océanie</localisation>
         </localisations>
         <caracteristique>
@@ -553,7 +531,6 @@
             <cri src="./Assets/Sounds/koala.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Kangourou">
         <gif src="./Assets/GIF/kangaroo.gif"/>
         <classification>
@@ -564,7 +541,7 @@
             <genre>Macropus</genre>
             <nom_scientifique>Macropus fuliginosus</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Océanie</localisation>
         </localisations>
         <caracteristique>
@@ -577,7 +554,6 @@
             <cri src="./Assets/Sounds/kangaroo.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Panda">
         <gif src="./Assets/GIF/panda.gif"/>
         <classification>
@@ -588,7 +564,7 @@
             <genre>Ailuropoda</genre>
             <nom_scientifique>Ailuropoda melanoleuca</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Asie</localisation>
         </localisations>
         <caracteristique>
@@ -601,7 +577,6 @@
             <cri src="./Assets/Sounds/panda.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Chauve-souris commune">
         <gif src="./Assets/GIF/bat.gif"/>
         <classification>
@@ -612,7 +587,7 @@
             <genre>Myotis</genre>
             <nom_scientifique>Myotis myotis</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Asie</localisation>
             <localisation>Afrique</localisation>
             <localisation>Europe</localisation>
@@ -627,7 +602,6 @@
             <cri src="./Assets/Sounds/bat.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Castor">
         <gif src="./Assets/GIF/beaver.gif"/>
         <classification>
@@ -638,7 +612,7 @@
             <genre>Castor</genre>
             <nom_scientifique>Castor fiber</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Amérique du Nord</localisation>
             <localisation>Asie</localisation>
             <localisation>Europe</localisation>
@@ -653,7 +627,6 @@
             <cri src="./Assets/Sounds/beaver.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Hippopotame">
         <gif src="./Assets/GIF/hippo.gif"/>
         <classification>
@@ -664,7 +637,7 @@
             <genre>Hippopotamus</genre>
             <nom_scientifique>Hippopotamus amphibius</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Afrique</localisation>
         </localisations>
         <caracteristique>
@@ -677,8 +650,7 @@
             <cri src="./Assets/Sounds/hippo.wav"/>
         </caracteristique>
     </animal>
-
-     <animal nom="Poule">
+    <animal nom="Poule">
         <gif src="./Assets/GIF/chicken.gif"/>
         <classification>
             <embranchement>Chordés</embranchement>
@@ -688,7 +660,7 @@
             <genre>Gallus</genre>
             <nom_scientifique>Gallus gallus domesticus</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Afrique</localisation>
             <localisation>Asie</localisation>
             <localisation>Europe</localisation>
@@ -706,7 +678,6 @@
             <cri src="./Assets/Sounds/chicken.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Manchot empereur">
         <gif src="./Assets/GIF/penguin.gif"/>
         <classification>
@@ -717,7 +688,7 @@
             <genre>Aptenodytes</genre>
             <nom_scientifique>Aptenodytes forsteri</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Antarctique</localisation>
         </localisations>
         <caracteristique>
@@ -730,7 +701,6 @@
             <cri src="./Assets/Sounds/penguin.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Grenouille commune">
         <gif src="./Assets/GIF/frog.gif"/>
         <classification>
@@ -741,7 +711,7 @@
             <genre>Rana</genre>
             <nom_scientifique>Rana temporaria</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Europe</localisation>
             <localisation>Asie</localisation>
         </localisations>
@@ -755,7 +725,6 @@
             <cri src="./Assets/Sounds/frog.wav"/>
         </caracteristique>
     </animal>
-
     <animal nom="Lapin">
         <gif src="./Assets/GIF/rabbit.gif"/>
         <classification>
@@ -766,7 +735,7 @@
             <genre>Oryctolagus</genre>
             <nom_scientifique>Oryctolagus cuniculus</nom_scientifique>
         </classification>
-        <localisations>>
+        <localisations>
             <localisation>Europe</localisation>
             <localisation>Afrique</localisation>
         </localisations>
@@ -780,5 +749,4 @@
             <cri src="./Assets/Sounds/rabbit.wav"/>
         </caracteristique>
     </animal>
-
 </animaux>

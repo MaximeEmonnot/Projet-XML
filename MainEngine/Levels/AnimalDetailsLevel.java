@@ -18,13 +18,13 @@ public class AnimalDetailsLevel extends ALevel {
     public AnimalDetailsLevel(String _name){
         super(_name);
 
-        backButton = new UIButton(new Rectangle(100, 590, 250, 75), "Back to list", 
+        backButton = new UIButton(new Rectangle(100, 590, 250, 75), "Retour à la liste", 
         () -> {LevelManager.GetInstance().SetLevel("Animal List Level");}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
-        playShout = new UIButton(new Rectangle(410, 515, 350, 40), "Play shout",
+        playShout = new UIButton(new Rectangle(410, 515, 350, 40), "Jouer le cri",
         () -> {}, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
 
-        stopShout = new UIButton(new Rectangle(785, 515, 350, 40), "Stop shout",
+        stopShout = new UIButton(new Rectangle(785, 515, 350, 40), "Arrêter le cri",
         () -> { AudioManager.GetInstance().StopSound(); }, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
     }
 

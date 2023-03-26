@@ -22,15 +22,15 @@ public class AnimalListLevel extends ALevel {
     public AnimalListLevel(String _name) throws Exception {
         super(_name);
 
-        addNewAnimal = new UIButton(new Rectangle(925, 590, 250, 75), "Add new animal", 
+        addNewAnimal = new UIButton(new Rectangle(925, 590, 250, 75), "Ajouter un animal", 
         () -> { LevelManager.GetInstance().SetLevel("Add Animal Level"); }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
         previous = new UIButton(new Rectangle(1190, 162, 50, 150), "↑",
         () -> { pageIndex--; }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
         next = new UIButton(new Rectangle(1190, 312, 50, 150), "↓",
         () -> { pageIndex++; }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
-        searchBox = new UIInputBox(new Rectangle(100, 590, 450, 75), "Type search command");
-        searchButton = new UIButton(new Rectangle(550, 590, 75, 75), "Search", 
+        searchBox = new UIInputBox(new Rectangle(100, 590, 420, 75), "entrez une requête xpath");
+        searchButton = new UIButton(new Rectangle(520, 590, 105, 75), "Rechercher", 
         () -> { 
             try{
                 bHasSearchError = false;
@@ -42,7 +42,7 @@ public class AnimalListLevel extends ALevel {
         },
          Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
-        transformHTML = new UIButton(new Rectangle(650, 590, 250, 75), "Get HTML View",
+        transformHTML = new UIButton(new Rectangle(650, 590, 250, 75), "Transformer un HTML",
         () -> {XMLManager.GetInstance().TransformDocument("Assets/XML/animaux.xml", "Assets/XML/animaux.xsl", "Assets/XML/animaux.html");}, 
         Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
     }

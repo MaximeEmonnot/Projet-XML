@@ -12,6 +12,7 @@ import java.util.List;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import AudioEngine.AudioManager;
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
 import MainEngine.LevelManager;
@@ -28,16 +29,27 @@ public class AddAnimalLevel extends ALevel {
 		super(_name);
 		gifSectionPoint = new Point(550 , 50);
 		classificationSectionPoint = new Point(50, 300);
-		caracteristiqueSectionPoint = new Point(550, 300);
+		caracteristiqueSectionPoint = new Point(450, 200);
 		localistaionSectionPoint = new Point(50, 150);
 		addSectionPoint = new Point(1100, 600);
+		cancelSectionPoint = new Point(1100, 530);
 		nomSectionPoint = new Point(50, 50);
-		errorSectionPoint = new Point(650, 650);
+		errorSectionPoint = new Point(350, 650);
 	}
 
 	@Override
 	public void OnBegin(Object... params) throws Exception {
-		// TODO Auto-generated method stub
+		
+		// Initialisation des variables
+		
+		selectedGif = "";
+		selectedLocalisations = "";
+		selectedCri = "";
+		LongueurMaxSelectedUnit = "m";
+		poidsMaxSelectedUnit = "t";
+		longeviteSelectedUnit = "années";
+		vitesseMaxSelectedUnit = "km/h";
+		
 		// Section Nom
 		nomInputBox = new UIInputBox(new Rectangle(nomSectionPoint.x + 170, nomSectionPoint.y - 20, 160, 30), "");
 		
@@ -70,6 +82,12 @@ public class AddAnimalLevel extends ALevel {
 		typeDePeauInputBox = new UIInputBox(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170, caracteristiqueSectionPoint.y + 30 + 150, 160, 30), "");
 		regimeAlimentaireInputBox = new UIInputBox(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170, caracteristiqueSectionPoint.y + 30 + 200, 160, 30), "");
 		vitesseMaxInputBox = new UIInputBox(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170, caracteristiqueSectionPoint.y + 30 + 250, 160, 30), "");
+		selectedCriTextBox = new UITextBox(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170, caracteristiqueSectionPoint.y + 30 + 300, 160, 30), selectedCri);
+		criSelectionMenu = new UISelectionMenu(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170,  caracteristiqueSectionPoint.y + 30 + 30 + 300, 160, 90 ));
+		playShoutButton = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 180,  caracteristiqueSectionPoint.y + 30 + 300, 120, 30 ), "Jouer le cri",
+				() -> {}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		stopShoutButton = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 180,  caracteristiqueSectionPoint.y + 30 + 300 + 50, 120, 30 ), "Arrêter le cri",
+				() -> {AudioManager.GetInstance().StopSound();}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
 		LongueurMaxInputBox.SetNewMaximalSize(10);
 		LongueurMaxInputBox.SetNewAuthorizedChar(AUTHORIZEDCHARDECIMAL);
@@ -84,7 +102,9 @@ public class AddAnimalLevel extends ALevel {
 		
 		LongueurMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30, 40, 30), "m",
 				() -> {LongueurMaxSelectedUnit = "m";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
-		LongueurMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30, 40, 30), "mm",
+		LongueurMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 40, caracteristiqueSectionPoint.y + 30, 40, 30), "cm",
+				() -> {LongueurMaxSelectedUnit = "cm";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		LongueurMaxUnitChoice3Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30, 40, 30), "mm",
 				() -> {LongueurMaxSelectedUnit = "mm";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
 		poidsMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "t",
@@ -96,8 +116,8 @@ public class AddAnimalLevel extends ALevel {
 		poidsMaxUnitChoice4Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 120, caracteristiqueSectionPoint.y + 30 + 50, 40, 30), "mg",
 				() -> {poidsMaxSelectedUnit = "mg";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
-		longeviteMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 100, 80, 30), "annees",
-				() -> {longeviteSelectedUnit = "annees";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		longeviteMaxUnitChoice1Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160, caracteristiqueSectionPoint.y + 30 + 100, 80, 30), "années",
+				() -> {longeviteSelectedUnit = "années";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		longeviteMaxUnitChoice2Button = new UIButton(new Rectangle(caracteristiqueSectionPoint.x + 50 + 170 + 160 + 80, caracteristiqueSectionPoint.y + 30 + 100, 60, 30), "jours",
 				() -> {longeviteSelectedUnit = "jours";}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 		
@@ -118,7 +138,8 @@ public class AddAnimalLevel extends ALevel {
 		LinkedHashMap<String, UILambda> items = new LinkedHashMap<String, UILambda>();
 		
 		items.put("Afrique", GetLocalisationItemLambdaFunct("Afrique"));
-		items.put("Amérique", GetLocalisationItemLambdaFunct("Amérique"));
+		items.put("Amérique du Nord", GetLocalisationItemLambdaFunct("Amérique du Nord"));
+		items.put("Amérique du Sud", GetLocalisationItemLambdaFunct("Amérique du Sud"));
 		items.put("Antarctique", GetLocalisationItemLambdaFunct("Antarctique"));
 		items.put("Asie", GetLocalisationItemLambdaFunct("Asie"));
 		items.put("Europe", GetLocalisationItemLambdaFunct("Europe"));
@@ -130,6 +151,12 @@ public class AddAnimalLevel extends ALevel {
 		
 		addButton = new UIButton(new Rectangle(addSectionPoint.x, addSectionPoint.y, 100, 50), "Ajouter", () -> {
 			AddAnimalToXmlFile();
+		}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		
+		// Section Annuler
+		
+		cancelButton = new UIButton(new Rectangle(cancelSectionPoint.x, cancelSectionPoint.y, 100, 50), "Annuler", () -> {
+			LevelManager.GetInstance().SetLevel("Animal List Level");
 		}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 	}
 
@@ -169,6 +196,7 @@ public class AddAnimalLevel extends ALevel {
 		LongueurMaxInputBox.Update();
 		LongueurMaxUnitChoice1Button.Update();
 		LongueurMaxUnitChoice2Button.Update();
+		LongueurMaxUnitChoice3Button.Update();
 		poidsMaxInputBox.Update();
 		poidsMaxUnitChoice1Button.Update();
 		poidsMaxUnitChoice2Button.Update();
@@ -182,6 +210,16 @@ public class AddAnimalLevel extends ALevel {
 		vitesseMaxInputBox.Update();
 		vitesseMaxUnitChoice1Button.Update();
 		vitesseMaxUnitChoice2Button.Update();
+		selectedCriTextBox.SetText(selectedCri);
+		criSelectionMenu.Update();
+		RefreshSelectionMenuCri();
+		playShoutButton.Update();
+		stopShoutButton.Update();
+		if(!selectedCri.isEmpty())
+			playShoutButton.SetFunction(() -> {AudioManager.GetInstance().PlaySound("./Assets/Sounds/" + selectedCri);});
+		else
+			playShoutButton.SetFunction(() -> {});
+		
 		
 		// Section Localistaion
 		selectedLocalisationsTextBox.SetText(selectedLocalisations);
@@ -189,6 +227,9 @@ public class AddAnimalLevel extends ALevel {
 		
 		// Section Ajout
 		addButton.Update();
+		
+		// Section Annuler
+		cancelButton.Update();
 		
 		// Remets l'unite, apr�s que l'utilisateur a modifie l'inputBox
 		LongueurMaxInputBox.SetText(LongueurMaxInputBox.GetText() + " " + LongueurMaxSelectedUnit);
@@ -209,7 +250,7 @@ public class AddAnimalLevel extends ALevel {
 		GraphicsSystem.GetInstance().DrawText("Selectionnez un gif:", gifSectionPoint, Color.BLACK);
 		selectedGifTextBox.Draw(10);
 		gifSelectionMenu.Draw(10);
-		GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/GIF/" + selectedGif),  new Rectangle(gifSectionPoint.x + 390, gifSectionPoint.y - 25, 280, 280) , 1);
+		GraphicsSystem.GetInstance().DrawSprite(SpriteFactory.GetInstance().GetSprite("Assets/GIF/" + selectedGif),  new Rectangle(gifSectionPoint.x + 430, gifSectionPoint.y - 35, 250, 250) , 1);
 		
 		// Section Classification
 		GraphicsSystem.GetInstance().DrawText("Classification:", classificationSectionPoint, Color.BLACK);
@@ -227,11 +268,12 @@ public class AddAnimalLevel extends ALevel {
 		nomScientifiqueInputBox.Draw(10);
 		
 		// Section Caract�ristique
-		GraphicsSystem.GetInstance().DrawText("Caract�ristique:", caracteristiqueSectionPoint, Color.BLACK);
+		GraphicsSystem.GetInstance().DrawText("Caractéristique:", caracteristiqueSectionPoint, Color.BLACK);
 		GraphicsSystem.GetInstance().DrawText("Longueur max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 50), Color.BLACK);
 		LongueurMaxInputBox.Draw(10);
 		LongueurMaxUnitChoice1Button.Draw(10);
 		LongueurMaxUnitChoice2Button.Draw(10);	
+		LongueurMaxUnitChoice3Button.Draw(10);
 		GraphicsSystem.GetInstance().DrawText("Poids max:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 100), Color.BLACK);
 		poidsMaxInputBox.Draw(10);
 		poidsMaxUnitChoice1Button.Draw(10);
@@ -250,6 +292,11 @@ public class AddAnimalLevel extends ALevel {
 		vitesseMaxInputBox.Draw(10);
 		vitesseMaxUnitChoice1Button.Draw(10);
 		vitesseMaxUnitChoice2Button.Draw(10);
+		GraphicsSystem.GetInstance().DrawText("Selectionnez un cri:", new Point(caracteristiqueSectionPoint.x + 50, caracteristiqueSectionPoint.y + 350), Color.BLACK);
+		selectedCriTextBox.Draw(10);
+		criSelectionMenu.Draw(10);
+		playShoutButton.Draw(10);
+		stopShoutButton.Draw(10);
 		
 		// Section Localisations
 		GraphicsSystem.GetInstance().DrawText("Localisations:", localistaionSectionPoint, Color.BLACK);
@@ -259,8 +306,11 @@ public class AddAnimalLevel extends ALevel {
 		// Section Ajout
 		addButton.Draw(10);
 		
+		// Section Annuler
+		cancelButton.Draw(10);
+		
 		if(drawEmptyError)
-			GraphicsSystem.GetInstance().DrawText("Merci de sp�cifier tous les champs.", errorSectionPoint, Color.RED);
+			GraphicsSystem.GetInstance().DrawText("Merci de spécifier tous les champs.", errorSectionPoint, Color.RED);
 		
 	}
 	
@@ -276,6 +326,19 @@ public class AddAnimalLevel extends ALevel {
     	
     	gifSelectionMenu.UpdateSelections(items);
     }
+	
+	private void RefreshSelectionMenuCri() {
+	LinkedHashMap<String, UILambda> items = new LinkedHashMap<String, UILambda>();
+    	
+    	final File folder = new File("./Assets/Sounds");
+    	for (final File fileEntry : folder.listFiles()) {
+    		if(fileEntry.isFile()){
+    			items.put(fileEntry.getName(), () -> {if(new File(fileEntry.getPath()).exists())selectedCri = fileEntry.getName();});
+    		}
+    	}
+    	
+    	criSelectionMenu.UpdateSelections(items);
+	}
 	
 	private UILambda GetLocalisationItemLambdaFunct(String name) {
 		return () -> {
@@ -293,7 +356,7 @@ public class AddAnimalLevel extends ALevel {
 		if(nomInputBox.GetText().isBlank() || selectedGif.isBlank() || embranchementInputBox.GetText().isEmpty() || classeInputBox.GetText().isBlank() || familleInputBox.GetText().isBlank() 
 				|| genreInputBox.GetText().isBlank() || nomScientifiqueInputBox.GetText().isBlank() || selectedLocalisations.isBlank() || longeviteMaxInputBox.GetText().isBlank() 
 				|| poidsMaxInputBox.GetText().isBlank() || longeviteMaxInputBox.GetText().isBlank() || typeDePeauInputBox.GetText().isBlank() 
-				|| regimeAlimentaireInputBox.GetText().isBlank() || vitesseMaxInputBox.GetText().isBlank()) {
+				|| regimeAlimentaireInputBox.GetText().isBlank() || vitesseMaxInputBox.GetText().isBlank() || selectedCri.isBlank()) {
 			drawEmptyError = true;
 			return;
 		}
@@ -384,6 +447,10 @@ public class AddAnimalLevel extends ALevel {
 		vitesseMaxElement.setTextContent(vitesseMaxInputBox.GetText());
 		caracteristiqueElement.appendChild(vitesseMaxElement);
 		
+		Element cri = animauxXML.createElement("cri");
+		cri.setAttribute("src", "./Assets/Sounds/" + selectedCri);
+		caracteristiqueElement.appendChild(cri);
+		
 		
 		// Ajout des elements fils de animal
 		animalElement.appendChild(gifElement);
@@ -396,8 +463,8 @@ public class AddAnimalLevel extends ALevel {
 		
 		xmlManagerInstance.WriteToFile(animauxXML, "./Assets/XML/animaux.xml");
 		
-		//Retour au menu
 		LevelManager.GetInstance().SetLevel("Animal List Level");
+		
 	}
 	
 	private final Point gifSectionPoint;
@@ -405,6 +472,7 @@ public class AddAnimalLevel extends ALevel {
 	private final Point caracteristiqueSectionPoint;
 	private final Point localistaionSectionPoint;
 	private final Point addSectionPoint;
+	private final Point cancelSectionPoint;
 	private final Point nomSectionPoint;
 	private final Point errorSectionPoint;
 	
@@ -412,7 +480,7 @@ public class AddAnimalLevel extends ALevel {
 	
 	private UITextBox selectedGifTextBox;
 	private UISelectionMenu gifSelectionMenu;
-	private String selectedGif = "";
+	private String selectedGif;
 	
 	private UIInputBox embranchementInputBox;
 	private UIInputBox classeInputBox;
@@ -424,29 +492,37 @@ public class AddAnimalLevel extends ALevel {
 	private UIInputBox LongueurMaxInputBox;
 	private UIButton LongueurMaxUnitChoice1Button;
 	private UIButton LongueurMaxUnitChoice2Button;
-	private String LongueurMaxSelectedUnit = "m";
+	private UIButton LongueurMaxUnitChoice3Button;
+	private String LongueurMaxSelectedUnit;
 	private UIInputBox poidsMaxInputBox;
 	private UIButton poidsMaxUnitChoice1Button;
 	private UIButton poidsMaxUnitChoice2Button;
 	private UIButton poidsMaxUnitChoice3Button;
 	private UIButton poidsMaxUnitChoice4Button;
-	private String poidsMaxSelectedUnit = "t";
+	private String poidsMaxSelectedUnit;
 	private UIInputBox longeviteMaxInputBox;
 	private UIButton longeviteMaxUnitChoice1Button;
 	private UIButton longeviteMaxUnitChoice2Button;
-	private String longeviteSelectedUnit = "ann�es";
+	private String longeviteSelectedUnit;
 	private UIInputBox typeDePeauInputBox;
 	private UIInputBox regimeAlimentaireInputBox;
 	private UIInputBox vitesseMaxInputBox;
 	private UIButton vitesseMaxUnitChoice1Button;
 	private UIButton vitesseMaxUnitChoice2Button;
-	private String vitesseMaxSelectedUnit = "km/h";
+	private String vitesseMaxSelectedUnit;
+	private UITextBox selectedCriTextBox;
+	private UISelectionMenu criSelectionMenu;
+	private String selectedCri;
+	private UIButton playShoutButton;
+	private UIButton stopShoutButton;
 	
 	private UITextBox selectedLocalisationsTextBox;
 	private UISelectionMenu LocalisationSelectionMenu;
-	private String selectedLocalisations = "";
+	private String selectedLocalisations;
 	
 	private UIButton addButton;
+	
+	private UIButton cancelButton;
 	
 	private boolean drawEmptyError = false;
 	
