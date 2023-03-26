@@ -24,9 +24,7 @@ public class XMLManager {
     }
 
     public Document GetDocument(String path) throws Exception {
-        if (!documents.containsKey(path)) 
-            documents.put(path, xmlReader.OpenDocument(path));
-        return documents.get(path);
+        return xmlReader.OpenDocument(path);
     }
 
     public void WriteToFile(String path) throws Exception {
@@ -57,9 +55,7 @@ public class XMLManager {
         xmlTransformer.TransformDocument(document, xsltPath, outputPath);
     }
 
-    private static XMLManager instance = null;
-
-    private Map<String, Document> documents = new HashMap<String, Document>();
+    private static XMLManager instance = null; 
 
     private XMLReader      xmlReader;
     private XMLWriter      xmlWriter;
