@@ -4,6 +4,7 @@ import CoreEngine.Mouse;
 import CoreEngine.Timer;
 import GraphicsEngine.GraphicsSystem;
 import MainEngine.Levels.AddAnimalLevel;
+import MainEngine.Levels.AdvancedSearchLevel;
 import MainEngine.Levels.AnimalListLevel;
 import MainEngine.Levels.AnimalDetailsLevel;
 
@@ -14,6 +15,7 @@ public class Engine {
         LevelManager.GetInstance().AddLevel(new AnimalListLevel("Animal List Level"));
         LevelManager.GetInstance().AddLevel(new AddAnimalLevel("Add Animal Level"));
         LevelManager.GetInstance().AddLevel(new AnimalDetailsLevel("Animal Details Level"));
+        LevelManager.GetInstance().AddLevel(new AdvancedSearchLevel("Advanced Search Level"));
     }
 
     public static Engine GetInstance() throws Exception {
