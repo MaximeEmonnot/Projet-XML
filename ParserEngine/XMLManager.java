@@ -24,9 +24,6 @@ public class XMLManager {
         return xmlReader.OpenDocument(path);
     }
 
-    public void WriteToFile(String path) throws Exception {
-        WriteToFile(GetDocument(path), path);
-    }
     public void WriteToFile(Document document, String path) throws Exception {
         xmlWriter.WriteDocumentToFile(document, path);
     }
