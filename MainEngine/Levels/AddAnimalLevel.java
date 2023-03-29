@@ -158,6 +158,8 @@ public class AddAnimalLevel extends ALevel {
 		cancelButton = new UIButton(new Rectangle(cancelSectionPoint.x, cancelSectionPoint.y, 100, 50), "Annuler", () -> {
 			LevelManager.GetInstance().SetLevel("Animal List Level");
 		}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+		
+		drawEmptyError = false;
 	}
 
 	@Override
@@ -524,7 +526,7 @@ public class AddAnimalLevel extends ALevel {
 	
 	private UIButton cancelButton;
 	
-	private boolean drawEmptyError = false;
+	private boolean drawEmptyError;
 	
 	private final String AUTHORIZEDCHARDECIMAL = "0123456789.";
 	private final String AUTHORIZEDCHARINTEGER = "0123456789";
