@@ -8,6 +8,10 @@ import MainEngine.Levels.AdvancedSearchLevel;
 import MainEngine.Levels.AnimalListLevel;
 import MainEngine.Levels.AnimalDetailsLevel;
 
+/*
+ * Singleton représentant le moteur de l'applciation
+ * Exécution des levels (Update, Draw)
+ */
 public class Engine {
     
     private Engine() throws Exception {
@@ -24,6 +28,7 @@ public class Engine {
         return instance;
     }
 
+    // Boucle principale
     public synchronized void EngineLoop() throws Exception {
         BeginLoop();
         Update();
@@ -31,17 +36,21 @@ public class Engine {
         EndLoop();
     }
 
+    // Update du moteur (Level en cours dans le LevelManager)
     private void Update() throws Exception {
         LevelManager.GetInstance().Update();
     }
+    // Draw du moteur (Level en cours dans le LevelManager)
     private void Draw() throws Exception {
         LevelManager.GetInstance().Draw();
     }
 
+    // Début de la boucle principale (Update du Timer)
     private void BeginLoop(){
         Timer.GetInstance().Update();
     }
 
+    // Fin de la boucle principale (Pop des évènements et affichage)
     private void EndLoop() {
         Mouse.GetInstance().Pop();
         Keyboard.GetInstance().Pop();

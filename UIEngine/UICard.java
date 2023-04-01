@@ -5,6 +5,9 @@ import CoreEngine.Mouse;
 import GraphicsEngine.GraphicsSystem;
 import GraphicsEngine.SpriteFactory;
 
+/*
+ * Classe de Carte pour l'affichage des animaux. Agit comme un UIButton avec une image
+ */
 public class UICard {
     private enum ECardState{
         BaseState,
@@ -24,6 +27,7 @@ public class UICard {
         pressColor = _pressColor;
     }
 
+    // Update reprit de la classe UIButton
     public void Update() throws Exception {
         if (rect.contains(Mouse.GetInstance().GetMousePos())){
             state = ECardState.HoverState;
@@ -35,6 +39,8 @@ public class UICard {
         else state = ECardState.BaseState;
     }
 
+    // Affichage de la carte
+    // On affiche le rectangle, le titre de la carte, et l'image
     public void Draw() {
         Draw(0);
     }
@@ -61,6 +67,8 @@ public class UICard {
         ), new Font("Arial Bold", Font.PLAIN, FONTSIZE), Color.BLACK, priority + 3);
     }
 
+
+    // Différents setters pour redéfinir les paramètres de la carte
     public void SetRectangle(Rectangle newRect){
         rect = newRect;
     }

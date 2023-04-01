@@ -7,6 +7,10 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
+/*
+ * Singleton responsable de la gestion des fichiers Audio
+ * Permet d'ouvrir et de jouer des fichiers .WAV
+ */
 public class AudioManager {
     
     private AudioManager() {}

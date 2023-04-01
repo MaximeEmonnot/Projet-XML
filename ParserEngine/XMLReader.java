@@ -10,6 +10,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 
+/*
+ * Classe helper pour la lecture d'un document XML
+ */
 public class XMLReader {
     
     public XMLReader() throws Exception{
@@ -18,6 +21,8 @@ public class XMLReader {
         dBuilder = dbFactory.newDocumentBuilder();
     }
 
+    // Ouverture d'un fichier XML
+    // Si un fichier n'existe pas, un nouveau fichier est créé au chemin renseigné
     public Document OpenDocument(String filepath) throws Exception{
 
         Document output = null;

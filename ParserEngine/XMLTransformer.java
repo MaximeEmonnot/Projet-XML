@@ -12,10 +12,14 @@ import javax.xml.transform.stream.StreamSource;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
+/*
+ * Classe helper pour la transformation XSLT d'un fichier XML
+ */
 public class XMLTransformer {
     
     public XMLTransformer() {}
 
+    // Transformation à partir d'un document XML
     public void TransformDocument(Document document, String xsltPath, String path) throws Exception {
         Source xslt = new StreamSource(new File(xsltPath));
         Transformer transformer = tFactory.newTransformer(xslt);
@@ -25,6 +29,7 @@ public class XMLTransformer {
         transformer.transform(source, result);
     }
 
+    // Transformation à partir d'un Node
     public void TransformNode(Node node, String xsltPath, String path) throws Exception {
         Source xslt = new StreamSource(new File(xsltPath));
         Transformer transformer = tFactory.newTransformer(xslt);

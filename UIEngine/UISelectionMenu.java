@@ -8,6 +8,9 @@ import java.util.LinkedHashMap;
 import CoreEngine.Mouse;
 import GraphicsEngine.GraphicsSystem;
 
+/*
+ * Classe d'un menu de sélection. Définit une liste de boutons à cliquer
+ */
 public class UISelectionMenu {
 	
 	public UISelectionMenu(Rectangle _rect) {
@@ -28,6 +31,8 @@ public class UISelectionMenu {
 		UpdateButtons();
 	}
 	
+	// Update du menu
+	// Parcours du menu à la molette
 	public void Update() throws Exception {
 		if (scrollPosition > 0 && Mouse.GetInstance().Read() == Mouse.EEventType.WheelUp && rect.contains(Mouse.GetInstance().GetMousePos())){
 			scrollPosition--;
@@ -41,6 +46,9 @@ public class UISelectionMenu {
 		}
 	}
 	
+	// Affichage du menu
+	// Affichage des différents boutons
+	// Affichage de la barre de scroll
 	public void Draw(int priority) {
 		
 		final float y = items.size() <= MaxItems() ? rect.y : rect.y + (rect.height - scrollBarHeight) * (scrollPosition / (float)(items.size() - MaxItems())) + 1;

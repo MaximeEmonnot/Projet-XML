@@ -10,15 +10,20 @@ import org.w3c.dom.NodeList;
 
 import oracle.xml.xquery.OXQDataSource;
 
+/*
+ * Classe helper d'exécution des requêtes XPath, et XQuery (en théorie)
+ */
 public class XMLQuerier {
     
     public XMLQuerier() throws Exception {}
 
+    // Requête simple, avec XPath
     public NodeList SimpleQuery(Document document, String expression) throws Exception {
         XPath xPath = xFactory.newXPath();
         return (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
     }
 
+    // Requête complexe, avec XQuery (en théorie)
     public XQResultSequence ComplexQuery(Document document, String query) throws Exception {
         OXQDataSource ds = new OXQDataSource();
         XQConnection conn = ds.getConnection();

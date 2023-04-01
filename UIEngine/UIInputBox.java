@@ -6,6 +6,9 @@ import CoreEngine.Mouse;
 import CoreEngine.Timer;
 import GraphicsEngine.GraphicsSystem;
 
+/*
+ * Champ de texte, défini par un rectangle et une description
+ */
 public class UIInputBox {
     
     public UIInputBox(Rectangle _rect, String _description){
@@ -13,6 +16,8 @@ public class UIInputBox {
         description = _description;
     }
 
+    // On vérifie si le champ a été sélectionné (focus)
+    // Si oui, alors on lit les entrées clavier de l'utilisateur
     public void Update(){
         if (Mouse.GetInstance().Read() == Mouse.EEventType.LRelease)
             bIsFocused = rect.contains(Mouse.GetInstance().GetMousePos());
@@ -24,6 +29,8 @@ public class UIInputBox {
         else text = text.replace("|", "");
     }
 
+    // Affichage du champ de texte
+    // Affichage du rectangle, puis du texte. Si aucun texte n'a été saisi par l'utilisateur, alors on affiche le texte de description
     public void Draw(){
         Draw(0);
     }
@@ -50,10 +57,12 @@ public class UIInputBox {
         ), textFont, textColor, priority + 2);
     }
 
+    // Redéfinition des caractères autorisés
     public void SetNewAuthorizedChar(String newAuthorizedChar){
         authorizedChar = newAuthorizedChar;
     }
 
+    // Définition de la taille maximale du champ de texte
     public void SetNewMaximalSize(int newMaximalSize){
         maximalSize = newMaximalSize;
     }
@@ -70,6 +79,7 @@ public class UIInputBox {
         description = newDescription;
     }
 
+    // Méthode pour l'indicateur (barre clignotante)
     private void IndicatorRoutine() {
         currentTimer += Timer.GetInstance().DeltaTime();
         if (currentTimer > timer){
@@ -79,6 +89,7 @@ public class UIInputBox {
         }
     }
 
+    // Méthode pour la lecture des entrées clavier
     private void ReadRoutine() {
         char c = Keyboard.GetInstance().ReadChar();
         if (c != 0) {

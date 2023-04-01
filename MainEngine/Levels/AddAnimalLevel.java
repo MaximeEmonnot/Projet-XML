@@ -23,6 +23,11 @@ import UIEngine.UIInputBox;
 import UIEngine.UISelectionMenu;
 import UIEngine.UITextBox;
 
+/*
+ * Classe du Level d'ajout d'un animal
+ * Définition de l'interface du Level
+ * Fonctionnalités : Définition de la classification, des localisations, des caractéristiques
+ */
 public class AddAnimalLevel extends ALevel {
 
 	public AddAnimalLevel(String _name) {

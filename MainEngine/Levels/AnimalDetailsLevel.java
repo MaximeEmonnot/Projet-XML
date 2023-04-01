@@ -12,18 +12,28 @@ import GraphicsEngine.*;
 import MainEngine.LevelManager;
 import UIEngine.UIButton;
 
-
+/*
+ * Classe du Level de détails d'un animal
+ * Définition de l'interface du Level
+ * Fonctionnalités : Afficher caractéristiques de l'animal, jouer le cri de l'animal, affichage de la carte avec localisations de l'animal
+ */
 public class AnimalDetailsLevel extends ALevel {
 
     public AnimalDetailsLevel(String _name){
         super(_name);
 
+        // Bouton retour au Level Liste (arrête le son en cours s'il y en a un)
         backButton = new UIButton(new Rectangle(100, 590, 250, 75), "Retour à la liste", 
-        () -> {LevelManager.GetInstance().SetLevel("Animal List Level");}, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+        () -> {
+            LevelManager.GetInstance().SetLevel("Animal List Level");
+            AudioManager.GetInstance().StopSound();
+        }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
 
+        // Jouer le cri de l'animal
         playShout = new UIButton(new Rectangle(410, 515, 350, 40), "Jouer le cri",
         () -> {}, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
 
+        // Arrêter le cri de l'animal
         stopShout = new UIButton(new Rectangle(785, 515, 350, 40), "Arrêter le cri",
         () -> { AudioManager.GetInstance().StopSound(); }, Color.LIGHT_GRAY, Color.DARK_GRAY, Color.BLACK);
     }
@@ -32,10 +42,12 @@ public class AnimalDetailsLevel extends ALevel {
     public void OnBegin(Object... params) {
         locations.clear();
 
+        // Définition des différentes caractéristiques à afficher
         Node animal = (Node)params[0];
         name = animal.getAttributes().getNamedItem("nom").getTextContent();
         NodeList animalInfos = animal.getChildNodes();
        
+        // On parcourt les différents éléments du Node pour définir les caractéristiques
         for (int i = 0; i < animalInfos.getLength(); i++){
             Node infoType = animalInfos.item(i);
             switch(infoType.getNodeName()){
@@ -136,6 +148,7 @@ public class AnimalDetailsLevel extends ALevel {
 
     @Override
     public void Update() throws Exception {
+        // Update des différents boutons
         backButton.Update();
         playShout.Update();
         stopShout.Update();

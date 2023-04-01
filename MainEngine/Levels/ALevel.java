@@ -1,5 +1,9 @@
 package MainEngine.Levels;
 
+/*
+ * Classe abstraite d'un Level défini par un nom
+ * Possède différents modèles de méthodes (OnBegin appelé au démarrage d'un Level, Update appelé à chaque frame, Draw appelé à chaque frame)
+ */
 public abstract class ALevel {
 
     public ALevel(String _name) {

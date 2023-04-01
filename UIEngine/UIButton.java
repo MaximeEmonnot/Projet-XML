@@ -4,6 +4,10 @@ import java.awt.*;
 import CoreEngine.Mouse;
 import GraphicsEngine.GraphicsSystem;
 
+/*
+ * Classe d'un bouton. Défini par un rectangle, un titre, une fonction et différentes couleurs selon l'état
+ * Définition des états : Base, Hover, Press
+ */
 public class UIButton {
     private enum EButtonState{
         BaseState,
@@ -20,6 +24,10 @@ public class UIButton {
         pressColor = _pressColor;
     }
 
+    // Update d'un bouton
+    // On vérifie si la souris survole le bouton (Hover)
+    // On vérifie ensuite si un clic est réalisé (Press)
+    // On exécute ensuite la fonction lambda enregistrée
     public void Update() throws Exception {
         if (rect.contains(Mouse.GetInstance().GetMousePos())){
             state = EButtonState.HoverState;
@@ -31,6 +39,8 @@ public class UIButton {
         else state = EButtonState.BaseState;
     }
 
+    // Affichage d'un bouton
+    // On affiche le rectangle, puis le texte
     public void Draw(){
         Draw(0);
     }
@@ -55,6 +65,7 @@ public class UIButton {
         ), new Font("Arial Bold", Font.PLAIN, FONTSIZE), Color.BLACK, priority + 2);
     }
 
+    // Différents setters pour redéfinir les paramètres du bouton
     public void SetRectangle(Rectangle newRect){
         rect = newRect;
     }

@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(45deg, #7c9885, #b5b682);
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --bg-color: #7c9885;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 650px;
+    height: 650px;
+    align-self: center;
+    gap: 10px;
+    background: var(--bg-color);
+    padding: 50px;
+    border: 2px solid;
+}
+
+.nom{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    font-size: 50px;
+}
+
+.classification{
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    margin-left: 10%;
+}
+
+.caracteristique{
+    grid-column: 2;
+    grid-row: 3;
+    display: grid;
+    margin-left: 10%;
+}
+
+.localisation{
+    grid-column: 1;
+    grid-row: 3;
+    background-image: url("../Images/Map.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: relative;
+    
+}
+
+.media{
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    display: grid;
+    justify-content: center;
+}
+
+.animation li{
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.animation li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #abb182;
+    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
+
+.animation li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
+
+.animation li:nth-of-type(1)::before,
+.animation li:nth-of-type(1)::after{
+    animation-delay: 1s;
+}
+
+.animation li:nth-of-type(2)::before,
+.animation li:nth-of-type(2)::after{
+    animation-delay: 1.3s;
+}
+
+.animation li:nth-of-type(3)::before,
+.animation li:nth-of-type(3)::after{
+    animation-delay: 1.6s;
+}
+
+.animation li:nth-of-type(4)::before,
+.animation li:nth-of-type(4)::after{
+    animation-delay: 1.9s;
+}
+
+.animation li:nth-of-type(5)::before,
+.animation li:nth-of-type(5)::after{
+    animation-delay: 2.2s;
+}
+
+.animation li:nth-of-type(6)::before,
+.animation li:nth-of-type(6)::after{
+    animation-delay: 2.5s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}
+
+.point{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+}
+
+.afrique{
+    left: 165px;
+    top: 90px;
+}
+
+.amerique_du_nord{
+    left: 95px;
+    top: 65px;
+}
+
+.amerique_du_sud{
+    left: 120px;
+    top: 105px;
+}
+
+.antarctique{
+    left: 158px;
+    top: 175px;
+}
+
+.asie{
+    left: 210px;
+    top: 60px;
+}
+
+.europe{
+    left: 160px;
+    top: 60px;
+}
+
+.oceanie{
+    left: 235px;
+    top: 110px;
+}

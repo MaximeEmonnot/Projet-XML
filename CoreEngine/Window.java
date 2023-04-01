@@ -3,6 +3,10 @@ import javax.swing.JFrame;
 
 import GraphicsEngine.GraphicsSystem;
 
+/*
+ * Singleton responsable de la gestion de la fenêtre
+ * Initialisation de la JFrame et lien avec les Manager autres (Keyboard, Mouse, GraphicsSystem)
+ */
 public class Window extends JFrame {
     private Window() {
         setTitle("XML Engine");

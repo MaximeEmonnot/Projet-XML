@@ -11,6 +11,9 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.w3c.dom.Document;
 
+/*
+ * Classe helper pour l'écriture dans un fichier XML
+ */
 class XMLWriter{
     
     public XMLWriter() throws Exception{

@@ -14,6 +14,11 @@ import MainEngine.LevelManager;
 import ParserEngine.XMLManager;
 import UIEngine.*;
 
+/*
+ * Classe du Level de recherche avancée
+ * Définition de l'interface du Level
+ * Fonctionnalités : Recherche simple avec recherche des localisations, et des caractéristiques (d'une certaine taille, plus grand que, plus petit...)
+ */
 public class AdvancedSearchLevel extends ALevel {
 
     public AdvancedSearchLevel(String _name) {
@@ -395,6 +400,7 @@ public class AdvancedSearchLevel extends ALevel {
 		localisations.SetText(String.join(", ", selectedLocalisationsList));
 	}
 
+    // Construction de la requête XPath à partir des différentes informations 
     private NodeList ComplexSearch() throws Exception {
         NodeList output = null;
 

@@ -3,6 +3,9 @@ import java.awt.*;
 
 import GraphicsEngine.GraphicsSystem;
 
+/*
+ * Classe définissant un simple rectangle avec du texte
+ */
 public class UITextBox {
     
     public UITextBox(Rectangle _rect, String _text){
@@ -18,6 +21,8 @@ public class UITextBox {
         rect = _rect;
     }
 
+    // Affichage du rectangle, avec le texte centré
+    // Gestion de la priorité d'affichage
     public void Draw(){
         Draw(0);
     }

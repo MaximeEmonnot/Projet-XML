@@ -11,7 +11,7 @@
                 <meta charset="UTF-8"/>
                 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <link rel="stylesheet" href="style.css"/>
+                <link rel="stylesheet" href="style_animaux.css"/>
                 <title>Document</title>
             </head>
             <body>
@@ -20,7 +20,7 @@
                         <article>
                             <div class="article-wrapper">
                                 <figure>
-                                    <img src="{gif/@src}" alt="" height="280" width="280"/>
+                                    <img src="../.{gif/@src}" alt="" height="280" width="280"/>
                                 </figure>
                                 <div class="article-body">
                                     <h2><xsl:value-of select="@nom"/></h2>
