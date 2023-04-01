@@ -28,8 +28,10 @@ public class UIInputBox {
         Draw(0);
     }
     public void Draw(int priority){
-        GraphicsSystem.GetInstance().DrawRect(rect, Color.WHITE, true, priority);
-        GraphicsSystem.GetInstance().DrawRect(rect, Color.BLACK, false, priority + 1);
+        GraphicsSystem.GetInstance().DrawRect(rect, Color.BLACK, true, priority);
+        int ratio = bIsFocused ? 2 : 1;
+        Rectangle innerRect = new Rectangle(rect.x + ratio, rect.y + ratio, rect.width - 2*ratio, rect.height - 2*ratio);
+        GraphicsSystem.GetInstance().DrawRect(innerRect, Color.WHITE, true, priority + 1);
         String textToDraw = "";
         Color textColor = Color.BLACK;
         Font textFont = null;

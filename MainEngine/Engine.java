@@ -16,6 +16,7 @@ public class Engine {
         LevelManager.GetInstance().AddLevel(new AddAnimalLevel("Add Animal Level"));
         LevelManager.GetInstance().AddLevel(new AnimalDetailsLevel("Animal Details Level"));
         LevelManager.GetInstance().AddLevel(new AdvancedSearchLevel("Advanced Search Level"));
+        
     }
 
     public static Engine GetInstance() throws Exception {

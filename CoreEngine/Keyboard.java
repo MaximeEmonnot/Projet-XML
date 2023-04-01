@@ -78,7 +78,7 @@ public class Keyboard implements KeyListener {
     }
 
 
-    private <T> void TrimBuffer(Queue<T> buffer){
+    private synchronized <T> void TrimBuffer(Queue<T> buffer){
         if (buffer.size() > sizeBuffer) buffer.remove();
     } 
     

@@ -176,7 +176,7 @@ public class Mouse implements MouseListener, MouseWheelListener, MouseMotionList
         return "Mouse postion : (" + position.x + ", " + position.y + ") Buttons State : L = " + bLeftIsPressed + " M = " + bMiddleIsPressed + " R = " + bRightIsPressed;
     }
 
-    private void TrimBuffer() {
+    private synchronized void TrimBuffer() {
         if (buffer.size() > bufferSize) buffer.remove();
     }
 
