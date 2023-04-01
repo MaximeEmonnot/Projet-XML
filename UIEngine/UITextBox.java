@@ -30,6 +30,10 @@ public class UITextBox {
         ), Color.BLACK, priority + 2);
     }
 
+    public String GetText() {
+        return text;
+    }
+
     private Rectangle rect;
     private String text;
 }

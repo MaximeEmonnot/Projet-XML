@@ -59,7 +59,8 @@ public class AnimalListLevel extends ALevel {
        cards.clear();
        pageIndex = 0;
 
-       InitializeListFromResult(XMLManager.GetInstance().GetDocument("Assets/XML/animaux.xml").getElementsByTagName("animal"));
+       if (params.length != 0) InitializeListFromResult((NodeList)params[0]);
+       else InitializeListFromResult(XMLManager.GetInstance().GetDocument("Assets/XML/animaux.xml").getElementsByTagName("animal"));
     }
 
     @Override
