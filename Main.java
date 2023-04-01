@@ -6,6 +6,9 @@ public class Main
 {
     public static void main(String[] args)
     {
+        // Paramètres d'exécution
+        System.setProperty("jdk.xml.xpathExprGrpLimit", "2000");
+        System.setProperty("jdk.xml.xpathExprOpLimit", "2000");
         try{
             Window.GetInstance();
             while(true){

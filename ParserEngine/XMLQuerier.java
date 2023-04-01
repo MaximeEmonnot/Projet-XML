@@ -1,5 +1,6 @@
 package ParserEngine;
 
+import javax.xml.XMLConstants;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
@@ -12,10 +13,10 @@ import oracle.xml.xquery.OXQDataSource;
 
 public class XMLQuerier {
     
-    public XMLQuerier(){}
+    public XMLQuerier() throws Exception {}
 
     public NodeList SimpleQuery(Document document, String expression) throws Exception {
-        XPath xPath = XPathFactory.newInstance().newXPath();
+        XPath xPath = xFactory.newXPath();
         return (NodeList) xPath.compile(expression).evaluate(document, XPathConstants.NODESET);
     }
 
@@ -25,4 +26,6 @@ public class XMLQuerier {
         XQPreparedExpression expr = conn.prepareExpression(query);
         return expr.executeQuery();
     }
+
+    private XPathFactory xFactory = XPathFactory.newInstance();
 }

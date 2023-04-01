@@ -1,6 +1,7 @@
 package MainEngine.Levels;
 
 import java.awt.*;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -463,9 +464,9 @@ public class AdvancedSearchLevel extends ALevel {
                 default: break;
             }
 
-            String condition = "(caracteristique/longueur_max/@unite='m' and caracteristique/longueur_max " + lengthOperator + " " + Float.parseFloat(length) * meterRatio + ")"
-            + "or (caracteristique/longueur_max/@unite='cm' and caracteristique/longueur_max " + lengthOperator + " " + Float.parseFloat(length) * centimeterRatio + ")"
-            + "or (caracteristique/longueur_max/@unite='mm' and caracteristique/longueur_max " + lengthOperator + " " + Float.parseFloat(length) * millimeterRatio + ")";
+            String condition = "(caracteristique/longueur_max/@unite='m' and caracteristique/longueur_max " + lengthOperator + " " + new BigDecimal(Float.parseFloat(length) * meterRatio) + ")"
+            + " or (caracteristique/longueur_max/@unite='cm' and caracteristique/longueur_max " + lengthOperator + " " + new BigDecimal(Float.parseFloat(length) * centimeterRatio) + ")"
+            + " or (caracteristique/longueur_max/@unite='mm' and caracteristique/longueur_max " + lengthOperator + " " + new BigDecimal(Float.parseFloat(length) * millimeterRatio) + ")";
 
             predicate += (predicate.isEmpty() ? "" : " and ") + "(" + condition + ")";
         }
@@ -511,10 +512,10 @@ public class AdvancedSearchLevel extends ALevel {
                 default: break;
             }
             
-            String condition = "(caracteristique/poids_max/@unite='t' and caracteristique/poids_max " + weightOperator + " " + Float.parseFloat(weight) * tonRatio + ")"
-            + "or (caracteristique/poids_max/@unite='kg' and caracteristique/poids_max " + weightOperator + " " + Float.parseFloat(weight) * kilogramRatio + ")"
-            + "or (caracteristique/poids_max/@unite='g' and caracteristique/poids_max " + weightOperator + " " + Float.parseFloat(weight) * gramRatio + ")"
-            + "or (caracteristique/poids_max/@unite='mg' and caracteristique/poids_max " + weightOperator + " " + Float.parseFloat(weight) * milligramRatio + ")";
+            String condition = "(caracteristique/poids_max/@unite='t' and caracteristique/poids_max " + weightOperator + " " + new BigDecimal(Float.parseFloat(weight) * tonRatio) + ")"
+            + " or (caracteristique/poids_max/@unite='kg' and caracteristique/poids_max " + weightOperator + " " + new BigDecimal(Float.parseFloat(weight) * kilogramRatio) + ")"
+            + " or (caracteristique/poids_max/@unite='g' and caracteristique/poids_max " + weightOperator + " " + new BigDecimal(Float.parseFloat(weight) * gramRatio) + ")"
+            + " or (caracteristique/poids_max/@unite='mg' and caracteristique/poids_max " + weightOperator + " " + new BigDecimal(Float.parseFloat(weight) * milligramRatio) + ")";
 
             predicate += (predicate.isEmpty() ? "" : " and ") + "( " + condition + " )";
         }
@@ -538,8 +539,8 @@ public class AdvancedSearchLevel extends ALevel {
                 default:break;
             }
 
-            String condition = "(caracteristique/longevite_max/@unite='années' and caracteristique/longevite_max " + longevityOperator + " " + Float.parseFloat(longevity) * yearsRatio + ")"
-            + "or (caracteristique/longevite_max/@unite='jours' and caracteristique/longevite_max " + longevityOperator + " " + Float.parseFloat(longevity) * daysRatio + ")";
+            String condition = "(caracteristique/longevite_max/@unite='années' and caracteristique/longevite_max " + longevityOperator + " " + new BigDecimal(Float.parseFloat(longevity) * yearsRatio) + ")"
+            + " or (caracteristique/longevite_max/@unite='jours' and caracteristique/longevite_max " + longevityOperator + " " + new BigDecimal(Float.parseFloat(longevity) * daysRatio) + ")";
 
             predicate += (predicate.isEmpty() ? "" : " and ") + "( " + condition + " )"; 
         } 
@@ -549,7 +550,7 @@ public class AdvancedSearchLevel extends ALevel {
             float kilometerHourRatio = 1.f;
             float meterSecondRatio = 1.f;
 
-            switch(longevityUnit){
+            switch(speedUnit){
                 case "km/h" :
                 {
                     kilometerHourRatio = 1.f;
@@ -565,8 +566,8 @@ public class AdvancedSearchLevel extends ALevel {
                 default:break;
             }
 
-            String condition = "(caracteristique/vitesse_max/@unite='km/h' and caracteristique/vitesse_max " + speedOperator + " " + Float.parseFloat(speed) * kilometerHourRatio + ")"
-            + "or (caracteristique/vitesse_max/@unite='m/s' and caracteristique/vitesse_max " + speedOperator + " " + Float.parseFloat(speed) * meterSecondRatio + ")";
+            String condition = "(caracteristique/vitesse_max/@unite='km/h' and caracteristique/vitesse_max " + speedOperator + " " + new BigDecimal(Float.parseFloat(speed) * kilometerHourRatio) + ")"
+            + " or (caracteristique/vitesse_max/@unite='m/s' and caracteristique/vitesse_max " + speedOperator + " " + new BigDecimal(Float.parseFloat(speed) * meterSecondRatio) + ")";
 
             predicate += (predicate.isEmpty() ? "" : " and ") + "( " + condition + " )";
         }
@@ -574,6 +575,7 @@ public class AdvancedSearchLevel extends ALevel {
         if (!predicate.isEmpty()) command += "[" + predicate + "]";
 
         try {
+            System.out.println(command);
             output = XMLManager.GetInstance().SimpleQuery("Assets/XML/animaux.xml", command);
         }
         catch(Exception e) {
