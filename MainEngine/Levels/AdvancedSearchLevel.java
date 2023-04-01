@@ -426,13 +426,13 @@ public class AdvancedSearchLevel extends ALevel {
         String predicate = "";
 
         // Partie Classification
-        if (!name.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(@nom,\"" + name + "\")";
-        if (!embranchement.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/embranchement,\"" + embranchement + "\")";
-        if (!classe.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/classe,\"" + classe + "\")";
-        if (!ordre.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/ordre,\"" + ordre + "\")";
-        if (!famille.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/famille,\"" + famille + "\")";
-        if (!genre.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/genre,\"" + genre + "\")";
-        if (!scientificName.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(classification/nom_scientifique,\"" + scientificName + "\")";
+        if (!name.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(@nom,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"), translate(\"" + name + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!embranchement.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/embranchement,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"), translate(\"" + embranchement + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!classe.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/classe,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),translate(\"" + classe + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!ordre.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/ordre,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),translate(\"" + ordre + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!famille.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/famille,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),translate(\"" + famille + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!genre.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/genre,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),translate(\"" + genre + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
+        if (!scientificName.isEmpty()) predicate += (predicate.isEmpty() ? "" : " and ") + "contains(translate(classification/nom_scientifique,\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"),\"" + scientificName + "\",\"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\"abcdefghijklmnopqrstuvwxyz\"))";
 
         // Partie Localisation
         if (!localisations.GetText().isEmpty()){
