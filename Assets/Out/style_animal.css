@@ -16,6 +16,7 @@ body, html {
 
 .wrapper{
     display: grid;
+    position: relative;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 650px;
@@ -25,6 +26,18 @@ body, html {
     background: var(--bg-color);
     padding: 50px;
     border: 2px solid;
+}
+
+.retour {
+    transition: transform 200ms ease-in-out;
+    transform-origin: left top;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.retour:hover {
+    transform: scale(1.2);
 }
 
 .nom{
@@ -101,34 +114,30 @@ body, html {
     transform: translateX(0);
 }
 
-.animation li:nth-of-type(1)::before,
-.animation li:nth-of-type(1)::after{
-    animation-delay: 1s;
-}
 
 .animation li:nth-of-type(2)::before,
 .animation li:nth-of-type(2)::after{
-    animation-delay: 1.3s;
+    animation-delay: 0.3s;
 }
 
 .animation li:nth-of-type(3)::before,
 .animation li:nth-of-type(3)::after{
-    animation-delay: 1.6s;
+    animation-delay: 0.6s;
 }
 
 .animation li:nth-of-type(4)::before,
 .animation li:nth-of-type(4)::after{
-    animation-delay: 1.9s;
+    animation-delay: 0.9s;
 }
 
 .animation li:nth-of-type(5)::before,
 .animation li:nth-of-type(5)::after{
-    animation-delay: 2.2s;
+    animation-delay: 1.2s;
 }
 
 .animation li:nth-of-type(6)::before,
 .animation li:nth-of-type(6)::after{
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
 }
 
 @keyframes a-ltr-after{

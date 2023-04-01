@@ -18,6 +18,7 @@
         </head>
         <body>
             <div class="wrapper">
+                 <a href="./animaux.html" class="retour"><img src="../Images/iu.png" width="100" height="auto"/></a>
                 <div class="nom"><xsl:value-of select="@nom"/></div>
                 <div class="classification">
                     <p><strong>Classification:</strong></p>
@@ -36,7 +37,7 @@
                         <li><strong>Longueur:</strong>&#160;&#160;<xsl:value-of select="caracteristique/longueur_max/text()"/>&#160;<xsl:value-of select="caracteristique/longueur_max/@unite"/></li>
                         <li><strong>Poids:</strong>&#160;&#160;<xsl:value-of select="caracteristique/poids_max/text()"/>&#160;<xsl:value-of select="caracteristique/poids_max/@unite"/></li>
                         <li><strong>Longevite:</strong>&#160;&#160;<xsl:value-of select="caracteristique/longevite_max/text()"/>&#160;<xsl:value-of select="caracteristique/longevite_max/@unite"/></li>
-                        <li><strong>Type de pea:</strong>&#160;&#160;<xsl:value-of select="caracteristique/type_peau/text()"/></li>
+                        <li><strong>Type de peau:</strong>&#160;&#160;<xsl:value-of select="caracteristique/type_peau/text()"/></li>
                         <li><strong>Regime alimentaire:</strong>&#160;&#160;<xsl:value-of select="caracteristique/regime/text()"/></li>
                         <li><strong>Vitesse:</strong>&#160;&#160;<xsl:value-of select="caracteristique/vitesse_max/text()"/>&#160;<xsl:value-of select="caracteristique/vitesse_max/@unite"/></li>
                     </ul>
@@ -69,7 +70,7 @@
                     </xsl:for-each>
                 </div>
                 <div class="media">
-                    <img src="../.{gif/@src}" height="220"/>
+                    <img src="../.{gif/@src}" height="220" width="220"/>
                     <audio id="cri" src="../.{caracteristique/cri/@src}" preload="auto"></audio>
                         <button onclick="document.getElementById('cri').play();">jouer le cri</button>
                 </div>
