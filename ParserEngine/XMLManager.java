@@ -4,6 +4,7 @@ import javax.xml.xquery.XQResultSequence;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
 
 public class XMLManager {
     
@@ -47,6 +48,10 @@ public class XMLManager {
     }
     public void TransformDocument(Document document, String xsltPath, String outputPath) throws Exception {
         xmlTransformer.TransformDocument(document, xsltPath, outputPath);
+    }
+
+    public void TransformNode(Node node, String xsltPath, String outputPath) throws Exception {
+        xmlTransformer.TransformNode(node, xsltPath, outputPath);
     }
 
     private static XMLManager instance = null; 

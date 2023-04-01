@@ -3,8 +3,6 @@ package MainEngine.Levels;
 import java.awt.*;
 import java.util.List;
 
-import javax.xml.xquery.XQResultSequence;
-
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -50,8 +48,16 @@ public class AnimalListLevel extends ALevel {
 
 
         transformHTML = new UIButton(new Rectangle(650, 590, 250, 75), "Transformer un HTML",
-        () -> {XMLManager.GetInstance().TransformDocument("Assets/XML/animaux.xml", "Assets/XML/animaux.xsl", "Assets/XML/animaux.html");}, 
-        Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
+        () -> {
+            XMLManager.GetInstance().TransformDocument("Assets/XML/animaux.xml", "Assets/XML/animaux.xsl", "animaux.html");
+       
+            NodeList animals = XMLManager.GetInstance().SimpleQuery("Assets/XML/animaux.xml", "//animal");
+            for (int i = 0; i < animals.getLength(); i++){
+                Node animal = animals.item(i);
+                String name = animal.getAttributes().getNamedItem("nom").getTextContent();
+                XMLManager.GetInstance().TransformNode(animal, "Assets/XML/animal.xsl", name + ".html");
+            }
+        }, Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY);
     }
 
     @Override
@@ -119,31 +125,34 @@ public class AnimalListLevel extends ALevel {
         if (bHasSearchError) GraphicsSystem.GetInstance().DrawText("Error : Wrong syntax", new Point(145, 655), Color.RED, 15);
     }
 
-    private void InitializeListFromResult(XQResultSequence result) throws Exception {
-
-        cards.clear();
-
-        while (result.next()){
-            Node node = result.getNode();
-
-            // Récupération du nom
-            String name = node.getAttributes().getNamedItem("nom").getTextContent();
-
-            // Récupération du GIF
-            NodeList childNodes = node.getChildNodes();
-            String gifPath = "";
-            for (int j = 0; j < childNodes.getLength(); j++){
-                Node child = childNodes.item(j);
-                if (child.getNodeName().equals("gif")){
+    /*
+     * 
+     private void InitializeListFromResult(XQResultSequence result) throws Exception {
+         
+         cards.clear();
+         
+         while (result.next()){
+             Node node = result.getNode();
+             
+             // Récupération du nom
+             String name = node.getAttributes().getNamedItem("nom").getTextContent();
+             
+             // Récupération du GIF
+             NodeList childNodes = node.getChildNodes();
+             String gifPath = "";
+             for (int j = 0; j < childNodes.getLength(); j++){
+                 Node child = childNodes.item(j);
+                 if (child.getNodeName().equals("gif")){
                     gifPath = child.getAttributes().getNamedItem("src").getTextContent();
                     break;
                 }
             }
-
+            
             cards.add(new UICard(new Rectangle(0, 0, 250, 250), name, gifPath, () -> { LevelManager.GetInstance().SetLevel("Animal Details Level", node);},
             Color.WHITE, Color.LIGHT_GRAY, Color.DARK_GRAY));
         }
     }
+    */
 
     private void InitializeListFromResult(NodeList result){
 
